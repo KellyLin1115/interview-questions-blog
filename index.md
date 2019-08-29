@@ -2,7 +2,7 @@
 
 :herb: 2. [OOPs Interview Questions](src/main/resource/static/pages/java/oops.md)
 
-:herb: 3. [Algorithms](src/main/resource/static/pages/algorithms/index-algorithms.md)
+:herb: 3. [Algorithms](src/main/resources/static/pages/algorithms/index-algorithms.md)
 
 
 JDBC Interview Questions
