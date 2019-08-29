@@ -1,6 +1,6 @@
-:herb: 1. [Java Interview Basic](src/main/resource/static/pages/java/basic.md)
+:herb: 1. [Java Interview Basic](src/main/resources/static/pages/java/basic.md)
 
-:herb: 2. [OOPs Interview Questions](src/main/resource/static/pages/java/oops.md)
+:herb: 2. [OOPs Interview Questions](src/main/resources/static/pages/java/oops.md)
 
 :herb: 3. [Algorithms](src/main/resources/static/pages/algorithms/index-algorithms.md)
 
