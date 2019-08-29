@@ -6,4 +6,4 @@ sidebar: true
 #sidebar-about-description: "简单的描述一下你自己"
 #sidebar-avatar: img/bfs.png
 sidebar:
-  nav: img/bfs.png
+  nav: "img/bfs.png"
