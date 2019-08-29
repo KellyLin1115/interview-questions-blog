@@ -1,4 +1,4 @@
-package com.kellylin1115.interviewquestionsblog;
+package com.kellylin1115.interview;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
