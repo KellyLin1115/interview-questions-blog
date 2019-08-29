@@ -2,3 +2,8 @@ theme: jekyll-theme-cayman
 plugins:
   - jemoji
 title: Welcome to Kelly Lin's interview questions blog!
+
+# Sidebar settings
+sidebar: true 
+sidebar-about-description: "简单的描述一下你自己"
+sidebar-avatar: /img/avatar-by.jpg     #你的大头贴，请使用绝对地址.注意：名字区分大小写！后缀名也是
