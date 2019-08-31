@@ -50,14 +50,32 @@ Edges on the shortest-paths tree: **edgeTo[v]** is the the last edge on a shorte
 Distance to the source: **distTo[v]** is the length of the shortest path from s to v.
 
 **Relaxation**. Our shortest-paths implementations are based on an operation known as relaxation. We initialize distTo[s] to 0 and distTo[v] to infinity for all other vertices v.
-Edge relaxation. To relax an edge v->w means to test whether the best known way from s to w is to go from s to v, then take the edge from v to w, and, if so, update our data structures.
 
-private void relax(DirectedEdge e) {
+* Edge relaxation. To relax an edge v->w means to test whether the best known way from s to w is to go from s to v, then take the edge from v to w, and, if so, update our data structures.
 
-    int v = e.from(), w = e.to();
-    if (distTo[w] > distTo[v] + e.weight()) {
-        distTo[w] = distTo[v] + e.weight();
-        edgeTo[w] = e;
+    private void relax(DirectedEdge e) {
+    
+        int v = e.from(), w = e.to();
+        if (distTo[w] > distTo[v] + e.weight()) {
+            distTo[w] = distTo[v] + e.weight();
+            edgeTo[w] = e;
+        }
     }
-}
 
+* Vertex relaxation. All of our implementations actually relax all the edges pointing from a given vertex.
+    private void relax(EdgeWeightedDigraph G, int v) {
+    
+        for (DirectedEdge e : G.adj(v)) {
+            int w = e.to();
+            if (distTo[w] > distTo[v] + e.weight()) {
+                distTo[w] = distTo[v] + e.weight();
+                edgeTo[w] = e;
+            }
+        }
+    }
+    
+**Dijkstra's algorithm**. Dijkstra's algorithm initializing dist[s] to 0 and all other distTo[] entries to positive infinity. Then, it repeatedly relaxes and adds to the tree a non-tree vertex with the lowest distTo[] value, continuing until all vertices are on the tree or no non-tree vertex has a finite distTo[] value.
+
+**Proposition**. Dijkstra's algorithm solves the single-source shortest-paths problem in edge-weighted digraphs with nonnegative weights using extra space proportional to V and time proportional to E log V (in the worst case).
+
+:pencil:[DijkstraSP.java](../../../../java/com/kellylin1115/interview/algorithms/graph/DijkstraSP.java)

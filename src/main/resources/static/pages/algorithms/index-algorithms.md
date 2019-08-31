@@ -23,3 +23,26 @@
 8. Detect And Remove Loop In A Linked List
 9. Merge Sort For Linked Lists
 10. Select A Random Node from A Singly Linked List
+### 3. Dynamic Programming
+1. Longest Common Subsequence
+2. Longest Increasing Subsequence
+3. Edit Distance
+4. Minimum Partition
+5. Ways to Cover a Distance
+6. Longest Path In Matrix
+7. Subset Sum Problem
+8. Optimal Strategy for a Game
+9. 0-1 Knapsack Problem
+10. Boolean Parenthesization Problem
+### 4. [Sorting And Searching](sorting-searching.md)
+1. Binary Search
+2. Search an element in a sorted and rotated array
+3. Bubble Sort
+4. Insertion Sort
+5. Merge Sort
+6. Heap Sort (Binary Heap)
+7. Quick Sort
+8. Interpolation Search
+9. Find Kth Smallest/Largest Element In Unsorted Array
+10. Given a sorted array and a number x, find the pair in array whose sum is closest to x
+11. [Index min priority queue](sorting-searching.md)
