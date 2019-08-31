@@ -183,8 +183,8 @@ Factor |	String | String Builder | String Buffer
 ------ | ------- | ------------- | -------------
 Storage Area |	Constant String Pool|	Heap Area	| Heap Area
 Mutability	| Immutable	| Mutable |	Mutable |
-Thread Safety |	Yes	| Yes	| No
-Performance	| Fast | Slow	| Fast
+Thread Safety |	Yes	| No	| Yes
+Performance	| Fast | Fast	| Slow
 
 ## 26. What is a classloader in Java?
 The **Java ClassLoader** is a subset of JVM (Java Virtual Machine) that is responsible for loading the class files. Whenever a Java program is executed it is first loaded by the classloader. Java provides three built-in classloaders:
