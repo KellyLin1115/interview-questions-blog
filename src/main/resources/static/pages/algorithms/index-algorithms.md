@@ -4,7 +4,7 @@
 ### 1. [Graph](graph.md)
 1. [Breadth First Search (BFS)](graph.md)
 2. [Depth First Search (DFS)](graph.md)
-3. Shortest Path from source to all vertices **Dijkstra** 
+3. [Shortest Path from source to all vertices **Dijkstra**](graph.md)
 4. Shortest Path from every vertex to every other vertex **Floyd Warshall**
 5. To detect cycle in a Graph **Union Find**
 6. Minimum Spanning tree **Prim** 
