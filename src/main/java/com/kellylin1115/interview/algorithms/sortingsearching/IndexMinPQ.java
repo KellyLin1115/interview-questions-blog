@@ -109,10 +109,10 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Integer
             return copy.delMin();
         }
     }
+
     public static void main(String[] args) {
         // insert a bunch of strings
         String[] strings = { "it", "was", "the", "best", "of", "times", "it", "was", "the", "worst" };
-        //String[] strings = { "b", "a"};
 
         IndexMinPQ<String> pq = new IndexMinPQ<String>(strings.length);
         for (int i = 0; i < strings.length; i++) {
