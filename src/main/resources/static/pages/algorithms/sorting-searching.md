@@ -41,7 +41,7 @@ In a heap, the parent of the node in position k is in position k/2; and, convers
        }
     }
     
-** Heap-based priority queue**. 
+**Heap-based priority queue**. 
 * Insert. We add the new item at the end of the array, increment the size of the heap, and then swim up through the heap with that item to restore the heap condition.
 * Remove the maximum. We take the largest item off the top, put the item from the end of the heap at the top, decrement the size of the heap, and then sink down through the heap with that item to restore the heap condition.
 
