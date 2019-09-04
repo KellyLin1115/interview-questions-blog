@@ -12,6 +12,7 @@
 8. Topological Sort
 9. Boggle (Find all possible words in a board of characters)
 10. Bridges in a Graph
+
 ### 2. [Linked List](linked-list.md)
 1. Insertion of a node in Linked List (On the basis of some constraints)
 2. Delete a given node in Linked List (under given constraints)
@@ -23,6 +24,7 @@
 8. Detect And Remove Loop In A Linked List
 9. Merge Sort For Linked Lists
 10. Select A Random Node from A Singly Linked List
+
 ### 3. Dynamic Programming
 1. Longest Common Subsequence
 2. Longest Increasing Subsequence
@@ -34,6 +36,7 @@
 8. Optimal Strategy for a Game
 9. 0-1 Knapsack Problem
 10. Boolean Parenthesization Problem
+
 ### 4. [Sorting And Searching](sorting-searching.md)
 1. Binary Search
 2. Search an element in a sorted and rotated array
