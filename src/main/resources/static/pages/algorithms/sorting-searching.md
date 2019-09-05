@@ -29,7 +29,7 @@ Input : arr[] = {30, 40, 50, 10, 20}
         key = 10   
 Output : Found at index 3
 
-:pencil:[BinarySearch.java](../../../../java/com/kellylin1115/interview/algorithms/sortingsearching/SortedRotatedSearch.java)
+:pencil:[SortedRotatedSearch.java](../../../../java/com/kellylin1115/interview/algorithms/sortingsearching/SortedRotatedSearch.java)
 
 ## 11. Index min priority queue
 **Heap definitions**. The binary heap is a data structure that can efficiently support the basic priority-queue operations. In a binary heap, the items are stored in an array such that each key is guaranteed to be larger than (or equal to) the keys at two other specific positions
