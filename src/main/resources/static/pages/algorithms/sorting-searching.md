@@ -3,6 +3,17 @@
 🌿 [Algorithms](index-algorithms.md)
 
 # Sorting And Searching
+## 1. Binary Search
+**Binary Search**: Search a sorted array by repeatedly dividing the search interval in half. Begin with an interval covering the whole array. If the value of the search key is less than the item in the middle of the interval, narrow the interval to the lower half. Otherwise narrow it to the upper half. Repeatedly check until the value is found or the interval is empty.
+
+![](../../images/algorithms/binary-search.png)
+
+The idea of binary search is to use the information that the array is sorted and reduce the time complexity to O(Log n)
+
+:pencil:[BinarySearch.java](../../../../java/com/kellylin1115/interview/algorithms/sortingsearching/BinarySearch.java)
+
+## 2. 
+
 ## 11. Index min priority queue
 **Heap definitions**. The binary heap is a data structure that can efficiently support the basic priority-queue operations. In a binary heap, the items are stored in an array such that each key is guaranteed to be larger than (or equal to) the keys at two other specific positions
 

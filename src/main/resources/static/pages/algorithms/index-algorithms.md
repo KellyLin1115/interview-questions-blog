@@ -5,13 +5,12 @@
 1. [Breadth First Search (BFS)](graph.md)
 2. [Depth First Search (DFS)](graph.md)
 3. [Shortest Path from source to all vertices **Dijkstra**](graph.md)
-4. Shortest Path from every vertex to every other vertex **Floyd Warshall**
-5. To detect cycle in a Graph **Union Find**
-6. Minimum Spanning tree **Prim** 
-7. Minimum Spanning tree **Kruskal** 
-8. Topological Sort
-9. Boggle (Find all possible words in a board of characters)
-10. Bridges in a Graph
+4. To detect cycle in a Graph **Union Find**
+5. Minimum Spanning tree **Prim** 
+6. Minimum Spanning tree **Kruskal** 
+7. Topological Sort
+8. Boggle (Find all possible words in a board of characters)
+9. Bridges in a Graph
 
 ### 2. [Linked List](linked-list.md)
 1. Insertion of a node in Linked List (On the basis of some constraints)
@@ -38,7 +37,7 @@
 10. Boolean Parenthesization Problem
 
 ### 4. [Sorting And Searching](sorting-searching.md)
-1. Binary Search
+1. [Binary Search](sorting-searching.md)
 2. Search an element in a sorted and rotated array
 3. Bubble Sort
 4. Insertion Sort
