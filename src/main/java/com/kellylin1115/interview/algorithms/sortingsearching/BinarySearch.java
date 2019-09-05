@@ -39,8 +39,7 @@ public class BinarySearch {
         return -1;
     }
 
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
         BinarySearch bs = new BinarySearch();
         int arr[] = { 2, 3, 4, 10, 40};
         int x = 40;

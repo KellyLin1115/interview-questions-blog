@@ -12,7 +12,24 @@ The idea of binary search is to use the information that the array is sorted and
 
 :pencil:[BinarySearch.java](../../../../java/com/kellylin1115/interview/algorithms/sortingsearching/BinarySearch.java)
 
-## 2. 
+## 2. Search an element in a sorted and rotated array
+An element in a sorted array can be found in O(log n) time via **binary search**. But suppose we rotate an ascending order sorted array at some pivot unknown to you beforehand. So for instance, 1 2 3 4 5 might become 3 4 5 1 2. Devise a way to find an element in the rotated array in O(log n) time.
+
+![](../../images/algorithms/sorted-pivoted-array.png)
+
+Input  : arr[] = {5, 6, 7, 8, 9, 10, 1, 2, 3};
+         key = 3
+Output : Found at index 8
+
+Input  : arr[] = {5, 6, 7, 8, 9, 10, 1, 2, 3};
+         key = 30
+Output : Not found
+
+Input : arr[] = {30, 40, 50, 10, 20}
+        key = 10   
+Output : Found at index 3
+
+:pencil:[BinarySearch.java](../../../../java/com/kellylin1115/interview/algorithms/sortingsearching/SortedRotatedSearch.java)
 
 ## 11. Index min priority queue
 **Heap definitions**. The binary heap is a data structure that can efficiently support the basic priority-queue operations. In a binary heap, the items are stored in an array such that each key is guaranteed to be larger than (or equal to) the keys at two other specific positions
