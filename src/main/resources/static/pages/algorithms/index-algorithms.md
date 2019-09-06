@@ -39,7 +39,7 @@
 ### 4. [Sorting And Searching](sorting-searching.md)
 1. [Binary Search](sorting-searching.md)
 2. [Search an element in a sorted and rotated array](sorting-searching.md)
-3. Bubble Sort
+3. [Bubble Sort](sorting-searching.md)
 4. Insertion Sort
 5. Merge Sort
 6. Heap Sort (Binary Heap)
