@@ -15,8 +15,5 @@ Performance Tuning
 
 
 
-# [Heading Link4](#section-i-want)
-## [Section I Want] 
-
 
 

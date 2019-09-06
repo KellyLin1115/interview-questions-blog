@@ -4,19 +4,19 @@
 
 # Sorting And Searching
 
-1. [Binary Search](#binary-search)
-2. Search an element in a sorted and rotated array
+1. [Binary Search](#1-binary-search)
+2. [Search an element in a sorted and rotated array](#2-search-an-element-in-a-sorted-and-rotated-array)
 3. [Bubble Sort](#3-bubble-sort)
-4. Insertion Sort
+4. [Insertion Sort](#4-insertion-sort)
 5. Merge Sort
 6. Heap Sort (Binary Heap)
 7. Quick Sort
 8. Interpolation Search
 9. Find Kth Smallest/Largest Element In Unsorted Array
 10. Given a sorted array and a number x, find the pair in array whose sum is closest to x
-11. Index min priority queue
+11. [Index min priority queue](#11-index-min-priority-queue)
 
-## 1. [Binary Search]
+## [1 Binary Search]
 **Binary Search**: Search a sorted array by repeatedly dividing the search interval in half. Begin with an interval covering the whole array. If the value of the search key is less than the item in the middle of the interval, narrow the interval to the lower half. Otherwise narrow it to the upper half. Repeatedly check until the value is found or the interval is empty.
 
 ![](../../images/algorithms/binary-search.png)
@@ -25,7 +25,7 @@ The idea of binary search is to use the information that the array is sorted and
 
 :pencil:[BinarySearch.java](../../../../java/com/kellylin1115/interview/algorithms/sortingsearching/BinarySearch.java)
 
-## 2. Search an element in a sorted and rotated array
+## [2 Search an element in a sorted and rotated array]
 An element in a sorted array can be found in O(log n) time via **binary search**. But suppose we rotate an ascending order sorted array at some pivot unknown to you beforehand. So for instance, 1 2 3 4 5 might become 3 4 5 1 2. Devise a way to find an element in the rotated array in O(log n) time.
 
 ![](../../images/algorithms/sorted-pivoted-array.png)
@@ -104,7 +104,7 @@ Now, the array is already sorted, but our algorithm does not know if it is compl
 
 **Stable**: Yes
 
-## 4. Insertion Sort
+## [4 Insertion Sort]
 Insertion sort is a simple sorting algorithm that works the way we sort playing cards in our hands.
 
 **Solution**:
@@ -129,7 +129,7 @@ Insertion sort is a simple sorting algorithm that works the way we sort playing 
 
 **Uses**: Insertion sort is used when number of elements is small. It can also be useful when input array is almost sorted, only few elements are misplaced in complete big array.
 
-## 11. Index min priority queue
+## [11 Index min priority queue]
 **Heap definitions**. The binary heap is a data structure that can efficiently support the basic priority-queue operations. In a binary heap, the items are stored in an array such that each key is guaranteed to be larger than (or equal to) the keys at two other specific positions
 
 A binary heap is a set of nodes with keys arranged in a complete heap-ordered binary tree, represented in level order in an array (not using the first entry).
