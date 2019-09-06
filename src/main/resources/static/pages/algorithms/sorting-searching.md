@@ -91,6 +91,30 @@ Now, the array is already sorted, but our algorithm does not know if it is compl
 
 **Stable**: Yes
 
+## 4. Insertion Sort
+Insertion sort is a simple sorting algorithm that works the way we sort playing cards in our hands.
+
+**Solution**:
+
+    // Sort an arr[] of size n
+    Loop from i = 1 to n-1.
+        Pick element arr[i] and insert it into sorted sequence arr[0…i-1]
+
+![](../../images/algorithms/insertion-sort.png)
+
+:pencil:[InsertionSort.java](../../../../java/com/kellylin1115/interview/algorithms/sortingsearching/InsertionSort.java)
+
+**Time Complexity**: O(n*2)
+
+**Auxiliary Space**: O(1)
+
+**Boundary Cases**: Insertion sort takes maximum time to sort if elements are sorted in reverse order. And it takes minimum time (Order of n) when elements are already sorted.
+
+**Sorting In Place**: Yes
+
+**Stable**: Yes
+
+**Uses**: Insertion sort is used when number of elements is small. It can also be useful when input array is almost sorted, only few elements are misplaced in complete big array.
 
 ## 11. Index min priority queue
 **Heap definitions**. The binary heap is a data structure that can efficiently support the basic priority-queue operations. In a binary heap, the items are stored in an array such that each key is guaranteed to be larger than (or equal to) the keys at two other specific positions
