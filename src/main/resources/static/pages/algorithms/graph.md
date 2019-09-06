@@ -6,7 +6,7 @@
 
 1. [Breadth First Search (BFS)](#1-breadth-first-search)
 2. [Depth First Search (DFS)](#2-depth-first-search)
-3. [Shortest Path from source to all vertices **Dijkstra**](#3-shortest-path-from-source-to-all-vertices-Dijkstra)
+3. [Shortest Path from source to all vertices **Dijkstra**](#3-shortest-path-from-source-to-all-vertices-dijkstra)
 4. To detect cycle in a Graph **Union Find**
 5. Minimum Spanning tree **Prim** 
 6. Minimum Spanning tree **Kruskal** 
@@ -18,6 +18,7 @@
 Breadth First Traversal (or Search) for a graph may contain cycles, so we may come to the same node again. To avoid processing a node more than once, we use a boolean visited array. For simplicity, it is assumed that all vertices are reachable from the starting vertex.
 
 For example, in the following graph, we start traversal from vertex 2. When we come to vertex 0, we look for all adjacent vertices of it. 2 is also an adjacent vertex of 0. If we don’t mark visited vertices, then 2 will be processed again and it will become a non-terminating process. A Breadth First Traversal of the following graph is 2, 0, 3, 1.
+
 ![](../../images/algorithms/bfs.png)
 
 :pencil:[BreadthFirstSearchGraph.java](../../../../java/com/kellylin1115/interview/algorithms/graph/BreadthFirstSearchGraph.java)
