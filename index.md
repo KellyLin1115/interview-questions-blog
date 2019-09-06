@@ -6,22 +6,6 @@
 
 
 
-
-
-# [Heading Link1](##section-i-want)
-
-# [Heading Link2](##Section I Want)
-
-# [Heading Link3](##section i want)
-
-
-
-# [Heading Link4](#section-i-want)
-
-# [Heading Link5](#Section I Want)
-
-# [Heading Link6](#section i want)
-
 JDBC Interview Questions
 Spring Interview Questions
 Hibernate Interview Questions
@@ -31,10 +15,8 @@ Performance Tuning
 
 
 
-
-
-
-
-
+# [Heading Link4](#section-i-want)
 ## [Section I Want] 
-fdsgfdh
+
+
+
