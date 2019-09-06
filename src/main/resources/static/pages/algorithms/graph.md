@@ -4,9 +4,9 @@
 
 # Graph
 
-1. [Breadth First Search (BFS)](#1-breadth-first-search-(bfs))
-2. [Depth First Search (DFS)](#2-depth-first-search-(dfs))
-3. [Shortest Path from source to all vertices **Dijkstra**](#3-shortest-path-from-source-to-all-vertices-**Dijkstra**)
+1. [Breadth First Search (BFS)](#1-breadth-first-search)
+2. [Depth First Search (DFS)](#2-depth-first-search)
+3. [Shortest Path from source to all vertices **Dijkstra**](#3-shortest-path-from-source-to-all-vertices-Dijkstra)
 4. To detect cycle in a Graph **Union Find**
 5. Minimum Spanning tree **Prim** 
 6. Minimum Spanning tree **Kruskal** 
@@ -14,7 +14,7 @@
 8. Boggle (Find all possible words in a board of characters)
 9. Bridges in a Graph
 
-## [1 Breadth First Search (BFS)]
+## [1 Breadth First Search]
 Breadth First Traversal (or Search) for a graph may contain cycles, so we may come to the same node again. To avoid processing a node more than once, we use a boolean visited array. For simplicity, it is assumed that all vertices are reachable from the starting vertex.
 
 For example, in the following graph, we start traversal from vertex 2. When we come to vertex 0, we look for all adjacent vertices of it. 2 is also an adjacent vertex of 0. If we don’t mark visited vertices, then 2 will be processed again and it will become a non-terminating process. A Breadth First Traversal of the following graph is 2, 0, 3, 1.
@@ -22,7 +22,7 @@ For example, in the following graph, we start traversal from vertex 2. When we c
 
 :pencil:[BreadthFirstSearchGraph.java](../../../../java/com/kellylin1115/interview/algorithms/graph/BreadthFirstSearchGraph.java)
 
-## [2 Depth First Search (DFS)]
+## [2 Depth First Search]
 Depth First Traversal (or Search) for a graph may contain cycles, so we may come to the same node again. To avoid processing a node more than once, we use a boolean visited array.
 
 For example, in the following graph, we start traversal from vertex 2. When we come to vertex 0, we look for all adjacent vertices of it. 2 is also an adjacent vertex of 0. If we don’t mark visited vertices, then 2 will be processed again and it will become a non-terminating process. A Depth First Traversal of the following graph is 2, 0, 1, 3.
@@ -31,7 +31,7 @@ For example, in the following graph, we start traversal from vertex 2. When we c
 
 :pencil:[DepthFirstSearchGraph.java](../../../../java/com/kellylin1115/interview/algorithms/graph/DepthFirstSearchGraph.java)
 
-## [3 Shortest Path from source to all vertices **Dijkstra**] 
+## [3 Shortest Path from source to all vertices Dijkstra] 
 **Shortest paths**: An edge-weighted digraph is a digraph where we associate weights or costs with each edge. A shortest path from vertex s to vertex t is a directed path from s to t with the property that no other such path has a lower weight.
 
 ![](../../images/algorithms/shortest-path.png)
