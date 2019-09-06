@@ -8,7 +8,7 @@
 2. [Search an element in a sorted and rotated array](#2-search-an-element-in-a-sorted-and-rotated-array)
 3. [Bubble Sort](#3-bubble-sort)
 4. [Insertion Sort](#4-insertion-sort)
-5. Merge Sort
+5. [Merge Sort](#5-merge-sort)
 6. Heap Sort (Binary Heap)
 7. Quick Sort
 8. Interpolation Search
@@ -128,6 +128,39 @@ Insertion sort is a simple sorting algorithm that works the way we sort playing 
 **Stable**: Yes
 
 **Uses**: Insertion sort is used when number of elements is small. It can also be useful when input array is almost sorted, only few elements are misplaced in complete big array.
+
+## [5 Merge Sort]
+Merge Sort is a Divide and Conquer algorithm. It divides input array in two halves, calls itself for the two halves and then merges the two sorted halves. 
+The merge() function is used for merging two halves. The merge(arr, l, m, r) is key process that assumes that arr[l..m] and arr[m+1..r] are sorted and merges the two sorted sub-arrays into one.
+
+    MergeSort(arr[], l,  r)
+    If r > l
+         1. Find the middle point to divide the array into two halves:  
+                 middle m = (l+r)/2
+         2. Call mergeSort for first half:   
+                 Call mergeSort(arr, l, m)
+         3. Call mergeSort for second half:
+                 Call mergeSort(arr, m+1, r)
+         4. Merge the two halves sorted in step 2 and 3:
+                 Call merge(arr, l, m, r)
+The complete merge sort process for an example array {38, 27, 43, 3, 9, 82, 10}. If we take a closer look at the diagram, we can see that the array is recursively divided in two halves till the size becomes 1. Once the size becomes 1, the merge processes comes into action and starts merging arrays back till the complete array is merged.
+             
+![](../../images/algorithms/merge-sort-tutorial.png)
+
+:pencil:[MergeSort.java](../../../../java/com/kellylin1115/interview/algorithms/sortingsearching/MergeSort.java)
+
+**Time Complexity**: Merge Sort is a recursive algorithm and time complexity can be expressed as following recurrence relation.
+T(n) = 2T(n/2) + Θ(n)
+The above recurrence can be solved either using Recurrence Tree method or Master method.
+Time complexity of Merge Sort is Θ(nLogn) in all 3 cases (worst, average and best) as merge sort always divides the array into two halves and take linear time to merge two halves.
+
+**Auxiliary Space**: O(n)
+
+**Algorithmic Paradigm**: Divide and Conquer
+
+**Sorting In Place**: No in a typical implementation
+
+**Stable**: Yes
 
 ## [11 Index min priority queue]
 **Heap definitions**. The binary heap is a data structure that can efficiently support the basic priority-queue operations. In a binary heap, the items are stored in an array such that each key is guaranteed to be larger than (or equal to) the keys at two other specific positions

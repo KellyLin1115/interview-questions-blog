@@ -41,7 +41,7 @@
 2. [Search an element in a sorted and rotated array](sorting-searching.md)
 3. [Bubble Sort](sorting-searching.md)
 4. [Insertion Sort](sorting-searching.md)
-5. Merge Sort
+5. [Merge Sort](sorting-searching.md)
 6. Heap Sort (Binary Heap)
 7. Quick Sort
 8. Interpolation Search
