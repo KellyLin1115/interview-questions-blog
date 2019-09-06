@@ -3,6 +3,17 @@
 🌿 [Algorithms](index-algorithms.md)
 
 # Sorting And Searching
+    1. Binary Search
+    2. Search an element in a sorted and rotated array
+    3. Bubble Sort
+    4. Insertion Sort
+    5. Merge Sort
+    6. Heap Sort (Binary Heap)
+    7. Quick Sort
+    8. Interpolation Search
+    9. Find Kth Smallest/Largest Element In Unsorted Array
+    10. Given a sorted array and a number x, find the pair in array whose sum is closest to x
+    11. Index min priority queue
 ## 1. Binary Search
 **Binary Search**: Search a sorted array by repeatedly dividing the search interval in half. Begin with an interval covering the whole array. If the value of the search key is less than the item in the middle of the interval, narrow the interval to the lower half. Otherwise narrow it to the upper half. Repeatedly check until the value is found or the interval is empty.
 
