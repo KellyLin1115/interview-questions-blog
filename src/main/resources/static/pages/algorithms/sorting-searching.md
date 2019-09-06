@@ -6,7 +6,7 @@
 
 1. [Binary Search](#binary-search)
 2. Search an element in a sorted and rotated array
-3. [Bubble Sort](#3.-bubble-sort)
+3. [Bubble Sort](#3-bubble-sort)
 4. Insertion Sort
 5. Merge Sort
 6. Heap Sort (Binary Heap)
@@ -64,7 +64,7 @@ Output : Found at index 3
 
 :pencil:[SortedRotatedSearch.java](../../../../java/com/kellylin1115/interview/algorithms/sortingsearching/SortedRotatedSearch.java)
 
-## [3. Bubble Sort]
+## [3 Bubble Sort]
 Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.
 
 Example:
