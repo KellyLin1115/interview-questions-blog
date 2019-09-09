@@ -9,12 +9,12 @@
 3. [Bubble Sort](#3-bubble-sort)
 4. [Insertion Sort](#4-insertion-sort)
 5. [Merge Sort](#5-merge-sort)
-6. Heap Sort (Binary Heap)
-7. Quick Sort
-8. Interpolation Search
-9. Find Kth Smallest/Largest Element In Unsorted Array
-10. Given a sorted array and a number x, find the pair in array whose sum is closest to x
-11. [Index min priority queue](#11-index-min-priority-queue)
+6. [Index min priority queue](#6-index-min-priority-queue)
+7. [Heap Sort (Binary Heap)](#7-heap-sort)
+8. Quick Sort
+9. Interpolation Search
+10. Find Kth Smallest/Largest Element In Unsorted Array
+11. Given a sorted array and a number x, find the pair in array whose sum is closest to x
 
 ## [1 Binary Search]
 **Binary Search**: Search a sorted array by repeatedly dividing the search interval in half. Begin with an interval covering the whole array. If the value of the search key is less than the item in the middle of the interval, narrow the interval to the lower half. Otherwise narrow it to the upper half. Repeatedly check until the value is found or the interval is empty.
@@ -162,8 +162,10 @@ Time complexity of Merge Sort is Θ(nLogn) in all 3 cases (worst, average and be
 
 **Stable**: Yes
 
-## [11 Index min priority queue]
-**Heap definitions**. The binary heap is a data structure that can efficiently support the basic priority-queue operations. In a binary heap, the items are stored in an array such that each key is guaranteed to be larger than (or equal to) the keys at two other specific positions
+## [6 Index min priority queue]
+**Complete Binary Tree**: A complete binary tree is a binary tree in which every level, except possibly the last, is completely filled, and all nodes are as far left as possible
+
+**Binary Heap**: The binary heap is a data structure that can efficiently support the basic priority-queue operations. In a binary heap, the items are stored in an array such that each key is guaranteed to be larger than (or equal to) the keys at two other specific positions
 
 A binary heap is a set of nodes with keys arranged in a complete heap-ordered binary tree, represented in level order in an array (not using the first entry).
 
@@ -213,4 +215,16 @@ In an n-item priority queue, the heap algorithms require no more than 1 + lg n c
 ![](../../images/algorithms/indexpq-api.png) 
 
 :pencil:[IndexMinPQ.java](../../../../java/com/kellylin1115/interview/algorithms/sortingsearching/IndexMinPQ.java)
+
+## [7 Heap Sort]
+**Heapsort**.We can use any priority queue to develop a sorting method. We insert all the keys to be sorted into a minimum-oriented priority queue, then repeatedly use remove the minimum to remove them all in order. When using a heap for the priority queue, we obtain heapsort.
+
+ Heapsort breaks into two phases: heap construction, where we reorganize the original array into a heap, and the sortdown, where we pull the items out of the heap in decreasing order to build the sorted result.
+ 
+* Heap construction.  A clever method that is much more efficient is to proceed from right to left, using sink() to make subheaps as we go. Every position in the array is the root of a small subheap; sink() works or such subheaps, as well. If the two children of a node are heaps, then calling sink() on that node makes the subtree rooted there a heap.
+* Sortdown. Most of the work during heapsort is done during the second phase, where we remove the largest remaining items from the heap and put it into the array position vacated as the heap shrinks.
+
+![](../../images/algorithms/heapsort-trace.png) 
+
+:pencil:[HeapSort.java](../../../../java/com/kellylin1115/interview/algorithms/sortingsearching/HeapSort.java)
 
