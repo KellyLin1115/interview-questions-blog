@@ -44,7 +44,7 @@
 5. [Merge Sort](sorting-searching.md)
 6. [Index min priority queue](sorting-searching.md)
 7. [Heap Sort (Binary Heap)](sorting-searching.md)
-8. Quick Sort
+8. [Quick Sort](sorting-searching.md)
 9. Interpolation Search
 10. Find Kth Smallest/Largest Element In Unsorted Array
 11. Given a sorted array and a number x, find the pair in array whose sum is closest to x

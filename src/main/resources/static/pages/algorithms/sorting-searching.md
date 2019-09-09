@@ -11,7 +11,7 @@
 5. [Merge Sort](#5-merge-sort)
 6. [Index min priority queue](#6-index-min-priority-queue)
 7. [Heap Sort (Binary Heap)](#7-heap-sort)
-8. Quick Sort
+8. [Quick Sort](#8-quick-sort)
 9. Interpolation Search
 10. Find Kth Smallest/Largest Element In Unsorted Array
 11. Given a sorted array and a number x, find the pair in array whose sum is closest to x
@@ -229,3 +229,31 @@ In an n-item priority queue, the heap algorithms require no more than 1 + lg n c
 :pencil:[HeapSort.java](../../../../java/com/kellylin1115/interview/algorithms/sortingsearching/HeapSort.java)
 
 Heapsort uses fewer than 2 n lg n compare and exchanges to sort n items.
+
+## [8 Quick Sort]
+QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot. 
+
+There are many different versions of quickSort that pick pivot in different ways.
+* Always pick first element as pivot.
+* Always pick last element as pivot (implemented below)
+* Pick a random element as pivot.
+* Pick median as pivot.
+
+The key process in quickSort is partition().
+1. We arbitrarily choose a[lo] to be the partitioning item—the one that will go into its final position. 
+2. Next, we scan from the left end of the array until we find an entry that is greater than (**or equal to**) the partitioning item, and we scan from the right end of the array until we find an entry less than (**or equal to**) the partitioning item.
+3. The two items that **stopped** the scans are out of place in the final partitioned array, so we exchange them.
+4. When the scan indices cross, all that we need to do to complete the partitioning process is to exchange the partitioning item a[lo] with the rightmost entry of the left subarray and return its index.
+
+**Implementation details**. 
+* Handling items with keys **equal to** the partitioning item's key. It is best to **stop** the left scan for items with keys greater than **or equal to** the partitioning item's key and the right scan for items less than **or equal to** the partitioning item's key. Even though this policy might seem to create unnecessary exchanges involving items with keys equal to the partitioning item's key, it is crucial to avoiding **quadratic running time** in certain typical applications.
+* Preserving randomness. The random shuffle puts the array in random order. Since it treats all items in the subarrays uniformly, QuickSort.java has the property that its two subarrays are also in random order. This fact is crucial to the algorithm's predictability. An alternate way to preserve randomness is to choose a random item for partitioning within partition().
+
+![](../../images/algorithms/partitioning-overview.png) 
+
+:pencil:[HeapSort.java](../../../../java/com/kellylin1115/interview/algorithms/sortingsearching/QuickSort.java)
+
+**Proposition**. 
+* Quicksort uses ~2 N ln N compares (and one-sixth that many exchanges) on the average to sort an array of length N with distinct keys.
+* Quicksort uses ~N2/2 compares in the worst case, but random shuffling protects against this case.
+
