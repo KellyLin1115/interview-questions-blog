@@ -228,3 +228,4 @@ In an n-item priority queue, the heap algorithms require no more than 1 + lg n c
 
 :pencil:[HeapSort.java](../../../../java/com/kellylin1115/interview/algorithms/sortingsearching/HeapSort.java)
 
+Heapsort uses fewer than 2 n lg n compare and exchanges to sort n items.
