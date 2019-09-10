@@ -48,5 +48,5 @@
 6. [Index min priority queue](sorting-searching.md)
 7. [Heap Sort (Binary Heap)](sorting-searching.md)
 8. [Quick Sort](sorting-searching.md)
-9. Find Kth Smallest/Largest Element In Unsorted Array
+9. [Find Kth Smallest/Largest Element In Unsorted Array](sorting-searching.md)
 10. Given a sorted array and a number x, find the pair in array whose sum is closest to x
