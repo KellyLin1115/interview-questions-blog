@@ -6,7 +6,9 @@
 
 ## [Master Method]
 The master method provides a “cookbook” method for solving recurrences of the form
+
 T(n)=aT(n/b)+ f(n),
+
 where a ≥ 1 and b > 1 are constants and f (n) is an asymptotically positive function.
 
 ![](../../images/algorithms/master-method.png)
