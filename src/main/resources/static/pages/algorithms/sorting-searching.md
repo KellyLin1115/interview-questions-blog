@@ -12,7 +12,7 @@
 6. [Index min priority queue](#6-index-min-priority-queue)
 7. [Heap Sort (Binary Heap)](#7-heap-sort)
 8. [Quick Sort](#8-quick-sort)
-9. Find Kth Smallest/Largest Element In Unsorted Array
+9. [Find Kth Smallest/Largest Element In Unsorted Array](#9-find-kth-smallest-element-in-unsorted-array)
 10. Given a sorted array and a number x, find the pair in array whose sum is closest to x
 
 ## [1 Binary Search]
@@ -256,3 +256,19 @@ The key process in quickSort is partition().
 * Quicksort uses ~2 N ln N compares (and one-sixth that many exchanges) on the average to sort an array of length N with distinct keys.
 * Quicksort uses ~N2/2 compares in the worst case, but random shuffling protects against this case.
 
+## [9 Find Kth Smallest Element In Unsorted Array]
+Given an array and a number k where k is smaller than the size of the array, we need to find the k’th smallest element in the given array. It is given that all array elements are distinct.
+
+**Solution**: 
+
+1. select(arr, l, h, k)
+2. Same as the quick sort partition process to randomly pick a pivot element, scan the array and return the pivot index i.
+3. if k == (i-l+1), return arr[i]
+4. else if k < (i-l+1), select(arr, l, i - 1, k)
+5. else if k > (i-l+1), select(arr, i + 1, h, k - (i - l + 1))
+
+:pencil:[FindKthSmallest.java](../../../../java/com/kellylin1115/interview/algorithms/sortingsearching/FindKthSmallest.java)
+
+**Time Complexity**: 
+The worst case time complexity of the above solution is still O(n2). In worst case, the randomized function may always pick a corner element. 
+The expected time complexity of above randomized QuickSelect is 􏰁?(n). (Proved by master method --> [MIT video lecture](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-introduction-to-algorithms-sma-5503-fall-2005/video-lectures/lecture-6-order-statistics-median/)
