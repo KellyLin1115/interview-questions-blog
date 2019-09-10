@@ -1,6 +1,9 @@
 :palm_tree: [Interview Questions](https://kellylin1115.github.io/interview-questions-blog/)
 
 ## Algorithms
+### [Useful Concept](basic.md)
+* [Master Method](basic.md)
+
 ### 1. [Graph](graph.md)
 1. [Breadth First Search (BFS)](graph.md)
 2. [Depth First Search (DFS)](graph.md)
@@ -45,7 +48,5 @@
 6. [Index min priority queue](sorting-searching.md)
 7. [Heap Sort (Binary Heap)](sorting-searching.md)
 8. [Quick Sort](sorting-searching.md)
-9. Interpolation Search
-10. Find Kth Smallest/Largest Element In Unsorted Array
-11. Given a sorted array and a number x, find the pair in array whose sum is closest to x
-
+9. Find Kth Smallest/Largest Element In Unsorted Array
+10. Given a sorted array and a number x, find the pair in array whose sum is closest to x

@@ -12,9 +12,8 @@
 6. [Index min priority queue](#6-index-min-priority-queue)
 7. [Heap Sort (Binary Heap)](#7-heap-sort)
 8. [Quick Sort](#8-quick-sort)
-9. Interpolation Search
-10. Find Kth Smallest/Largest Element In Unsorted Array
-11. Given a sorted array and a number x, find the pair in array whose sum is closest to x
+9. Find Kth Smallest/Largest Element In Unsorted Array
+10. Given a sorted array and a number x, find the pair in array whose sum is closest to x
 
 ## [1 Binary Search]
 **Binary Search**: Search a sorted array by repeatedly dividing the search interval in half. Begin with an interval covering the whole array. If the value of the search key is less than the item in the middle of the interval, narrow the interval to the lower half. Otherwise narrow it to the upper half. Repeatedly check until the value is found or the interval is empty.
