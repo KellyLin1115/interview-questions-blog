@@ -13,7 +13,7 @@
 7. [Heap Sort (Binary Heap)](#7-heap-sort)
 8. [Quick Sort](#8-quick-sort)
 9. [Find Kth Smallest/Largest Element In Unsorted Array](#9-find-kth-smallest-element-in-unsorted-array)
-10. Given a sorted array and a number x, find the pair in array whose sum is closest to x
+10. [Given a sorted array and a number x, find the pair in array whose sum is closest to x](#)
 
 ## [1 Binary Search]
 **Binary Search**: Search a sorted array by repeatedly dividing the search interval in half. Begin with an interval covering the whole array. If the value of the search key is less than the item in the middle of the interval, narrow the interval to the lower half. Otherwise narrow it to the upper half. Repeatedly check until the value is found or the interval is empty.
@@ -272,3 +272,35 @@ Given an array and a number k where k is smaller than the size of the array, we 
 **Time Complexity**: 
 The worst case time complexity of the above solution is still O(n2). In worst case, the randomized function may always pick a corner element. 
 The expected time complexity of above randomized QuickSelect is 􏰁?(n). (Proved by master method --> [MIT video lecture](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-introduction-to-algorithms-sma-5503-fall-2005/video-lectures/lecture-6-order-statistics-median/)
+
+## 
+## [10 Given a sorted array and a number x, find the pair in array whose sum is closest to x]
+Given a sorted array and a number x, find a pair in array whose sum is closest to x.
+
+    Examples:
+    
+    Input: arr[] = {10, 22, 28, 29, 30, 40}, x = 54
+    Output: 22 and 30
+    
+    Input: arr[] = {1, 3, 4, 7, 10}, x = 15
+    Output: 4 and 10
+    
+A simple solution is to consider every pair and keep track of closest pair (absolute difference between pair sum and x is minimum). Time complexity of this solution is O(n2)
+
+An efficient solution can find the pair in **O(n)** time. Following is detailed algorithm.
+
+    1) Initialize a variable diff as infinite (Diff is used to store the 
+       difference between pair and x).  We need to find the minimum diff.
+    2) Initialize two index variables l and r in the given sorted array.
+           (a) Initialize first to the leftmost index:  l = 0
+           (b) Initialize second  the rightmost index:  r = n-1
+    3) Loop while l < r.
+           (a) If  abs(arr[l] + arr[r] - sum) < diff  then 
+               update diff and result 
+           (b) Else if(arr[l] + arr[r] <  sum )  then l++
+           (c) Else r--  
+           
+
+:pencil:[MinDiffPair.java](../../../../java/com/kellylin1115/interview/algorithms/sortingsearching/MinDiffPair.java)
+
+ 
