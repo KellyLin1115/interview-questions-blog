@@ -274,6 +274,7 @@ The worst case time complexity of the above solution is still O(n2). In worst ca
 The expected time complexity of above randomized QuickSelect is 􏰁?(n). (Proved by master method --> [MIT video lecture](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-introduction-to-algorithms-sma-5503-fall-2005/video-lectures/lecture-6-order-statistics-median/)
 
 ## [10]
+
 ## Given a sorted array and a number x, find the pair in array whose sum is closest to x
 Given a sorted array and a number x, find a pair in array whose sum is closest to x.
 
