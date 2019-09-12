@@ -53,7 +53,7 @@
 
 ### 8. [String / Array](string-array.md)
 1. [Reverse an array without affecting special characters](string-array.md)
-2. All Possible Palindromic Partitions
+2. [All Possible Palindromic Partitions](string-array.md)
 3. Count triplets with sum smaller than a given value
 4. Convert array into Zig-Zag fashion
 5. Generate all possible sorted arrays from alternate elements of two given sorted arrays
