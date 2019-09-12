@@ -21,9 +21,8 @@ public class ReverseWithoutSpecial {
             else break;
         }
 
-        for (char c : str)
-            stringBuilder.append(c);
-        return stringBuilder.toString();
+        String result = new String(str);
+        return result;
     }
 
     private static void swap(char[] str, int i, int j){
