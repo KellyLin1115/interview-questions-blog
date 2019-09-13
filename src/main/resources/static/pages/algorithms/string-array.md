@@ -58,6 +58,7 @@ Given an array of distinct integers and a sum value. Find count of triplets with
 **Simple Solution** : run three loops to consider all triplets one by one. Time complexity is O(n3).
 
 **Solution**: Time complexity is O(n2)
+
 1) Sort the input array in increasing order.
 
 2) Initialize result as 0.
