@@ -6,6 +6,7 @@
 
 1. [Reverse an array without affecting special characters](#1)
 2. [All Possible Palindromic Partitions](#2-all-possible-palindromic-partitions)
+3. [Count triplets with sum smaller than a given value](#3)
 
 ## [1]
 ## [Reverse an array without affecting special characters]
@@ -50,4 +51,23 @@ We have to list the all possible partitions so we will think in the direction of
 
 :pencil:[PrintAllPalindrome.java](../../../../java/com/kellylin1115/interview/algorithms/stringarray/PrintAllPalindrome.java)
 
+## [3]
+## [Count triplets with sum smaller than a given value]
+Given an array of distinct integers and a sum value. Find count of triplets with sum smaller than given sum value. Expected Time Complexity is O(n2).
 
+**Simple Solution** : run three loops to consider all triplets one by one. Time complexity is O(n3).
+
+**Solution**: 
+1) Sort the input array in increasing order.
+2) Initialize result as 0.
+3) Run a loop from i = 0 to n-2.  An iteration of this loop finds all triplets with arr[i] as first element.
+     
+     a) Initialize other two elements as corner elements of sub array arr[i+1..n-1], i.e., j = i+1 and k = n-1
+     
+     b) Move j and k toward each other until they meet: 
+        while(j < k)
+            if (arr[i] + arr[j] + arr[k] >= sum), then do k--
+            else do res += (k - j) followed by j++ 
+                     
+:pencil:[CountTriplets.java](../../../../java/com/kellylin1115/interview/algorithms/stringarray/CountTriplets.java)
+            
