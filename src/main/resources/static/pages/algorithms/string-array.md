@@ -7,6 +7,7 @@
 1. [Reverse an array without affecting special characters](#1)
 2. [All Possible Palindromic Partitions](#2-all-possible-palindromic-partitions)
 3. [Count triplets with sum smaller than a given value](#3)
+4. [Convert array into Zig-Zag fashion](#4)
 
 ## [1]
 ## [Reverse an array without affecting special characters]
@@ -73,4 +74,31 @@ Given an array of distinct integers and a sum value. Find count of triplets with
             else do res += (k - j) followed by j++ 
                      
 :pencil:[CountTriplets.java](../../../../java/com/kellylin1115/interview/algorithms/stringarray/CountTriplets.java)
-            
+  
+## [4]
+## [Convert array into Zig-Zag fashion]
+Given an array of **DISTINCT** elements, rearrange the elements of array in zig-zag fashion in O(n) time. The converted array should be in form **a < b > c < d > e < f**.
+
+Example:
+
+    Input: arr[] = {4, 3, 7, 8, 6, 2, 1}
+    Output: arr[] = {3, 7, 4, 8, 2, 6, 1}
+    
+    Input: arr[] = {1, 4, 3, 2}
+    Output: arr[] = {1, 4, 2, 3} 
+
+**Solution**:
+
+We can convert in **O(n)** time using a modified one pass of bubble sort.
+
+* Maintain a flag for representing which order(i.e. < or >) currently we need.
+* If the current two elements are not in that order then swap those elements otherwise not.
+
+Let us see the main logic using three consecutive elements A, B, C:
+
+Suppose we are processing B and C currently and the current relation is ‘<', but we have B > C. Since current relation is ‘<' previous relation must be '>‘ i.e., A must be greater than B. So, the relation is A > B and B > C. We can **deduce A > C**. So if we **swap** B and C then the relation is A > C and C < B. Finally we get the desired order **A C B**
+
+:pencil:[ConvertZigZag.java](../../../../java/com/kellylin1115/interview/algorithms/stringarray/ConvertZigZag.java)
+
+
+ 
