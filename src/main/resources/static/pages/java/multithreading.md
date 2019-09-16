@@ -3,8 +3,7 @@
 
 # Java Multithreading Interview Questions
 
-## Question List
-https://www.javatpoint.com/java-multithreading-interview-questions
+## [Question List](https://www.javatpoint.com/java-multithreading-interview-questions)
 
 ## Avoiding Deadlocks
 * A program that never acquires more than **one lock** at a time cannot experience lock􏰁ordering deadlock. Of course, this is not always practical, but if you can get away with it, it's a lot less work. 
@@ -167,3 +166,20 @@ CyclicBarrier allows a **fixed number of parties** to rendezvous **repeatedly** 
 When parallelizing a simulation, it is generally impractical to assign a separate thread to each element (in the case of Life, a cell); this would require too many threads, and the overhead of coordinating them would dwarf the computation. Instead, it makes sense to partition the problem into a number of subparts, let each thread solve a subpart, and then merge the results.
 
 :pencil:[CyclicBarrierTest.java](../../../../java/com/kellylin1115/interview/java/multithreading/CyclicBarrierTest.java)
+
+## Semaphore
+Counting semaphores are used to control the number of activities that can access a certain resource or perform a given action at the same time. 
+Counting semaphores can be used to implement resource pools or to impose a bound on a collection.
+
+A **Semaphore** manages a set of virtual permits: 
+
+* the initial number of **permits** is passed to the Semaphore **constructor**. 
+* Activities can **acquire** permits (as long as some remain) and **release** permits when they are done with them. 
+* If **no permit** is available, acquire **blocks** until one is released(or until interrupted or the operation times out). 
+
+You can use a **Semaphore** to **turn** any collection into a **blocking bounded collection**, as illustrated by **BoundedHashSet**.
+
+The semaphore is initialized to the desired maximum size of the collection. The add operation acquires a permit before adding the item into the underlying collection. If the underlying add operation does not actually add anything, it releases the permit immediately. Similarly, a successful remove operation releases a permit, enabling more elements to be added. The underlying Set implementation knows nothing about the bound;
+
+:pencil:[BoundedHashSet.java](../../../../java/com/kellylin1115/interview/java/multithreading/BoundedHashSet.java)
+
