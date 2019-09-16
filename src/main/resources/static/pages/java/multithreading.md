@@ -117,4 +117,42 @@ Runnable, Callable and Future Interfaces:
                         TimeoutException;
     }
 
-     
+There are several ways to **create a Future** to describe a task:
+* The **submit** methods in ExecutorService all **return a Future**, so that you can **submit a Runnable or a Callable** to an executor and **get back a Future** that can be used to retrieve the result or cancel the task. 
+* You can also **explicitly instantiate a FutureTask** for a given Runnable or Callable. (Because FutureTask implements Runnable, it can be submitted to an Executor for execution or executed directly by calling its run method.)
+* As of Java 6, ExecutorService implementations can override **newTaskFor**
+  in AbstractExecutorService to control instantiation of the Future
+  corresponding to a submitted Callable or Runnable. The default
+  implementation just creates a new FutureTask as below
+  
+    Default Implementation of newTaskFor in ThreadPoolExecutor.
+    
+      protected <T> RunnableFuture<T> newTaskFor(Callable<T> task) {
+        return new FutureTask<T>(task);
+      }
+      
+## CountDownLatch
+CountDownLatch allows **one or more threads** to **wait** for **a set of events** to occur. 
+The latch state consists of a **counter** initialized to a positive number, representing the number of events to wait for. 
+The **countDown** method **decrements the counter**, indicating that an event has occurred, 
+and the **await** methods wait for the counter to **reach zero**, which happens when all the events have occurred. 
+If the counter is nonzero on entry, await blocks until the counter reaches zero, the waiting thread is interrupted, or the wait times out.
+
+**TestHarness** illustrates two common uses for latches. 
+
+TestHarness
+creates a number of threads that run a given task concurrently. 
+It uses two latches, a "**starting gate**" and an "**ending gate**". 
+The
+starting gate is initialized with a count of one; 
+the ending gate is
+initialized with a count equal to the number of worker threads. 
+The
+first thing each worker thread does is wait on the starting gate; this
+ensures that none of them starts working until they all are ready to
+start. The last thing each does is count down on the ending gate; this
+allows the master thread to wait efficiently until the last of the
+worker threads has finished, so it can calculate the elapsed time.
+                     
+:pencil:[TestHarness.java](../../../../java/com/kellylin1115/interview/java/multithreading/TestHarness.java)
+
