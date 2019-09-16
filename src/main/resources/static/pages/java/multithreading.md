@@ -156,3 +156,14 @@ worker threads has finished, so it can calculate the elapsed time.
                      
 :pencil:[TestHarness.java](../../../../java/com/kellylin1115/interview/java/multithreading/TestHarness.java)
 
+## CyclicBarrier
+ **Latches** are** single-use** objects; once a latch enters the terminal state, it cannot be reset.
+
+ **Latches** are for waiting for events; **barriers** are for waiting for other threads. 
+
+CyclicBarrier allows a **fixed number of parties** to rendezvous **repeatedly** at a barrier point and is useful in parallel iterative algorithms that break down a problem into a fixed number of independent subproblems. Threads call **await** when they reach the **barrier point**, and await blocks until **all the threads have reached** the barrier point. If all threads meet at the barrier point, the barrier has been successfully passed, in which case all threads are released and the barrier is **reset** so it can be used again. If a call to await times out or a thread blocked in await is interrupted, then the barrier is considered broken and all outstanding calls to await terminate with **BrokenBarrierException**. If the barrier is successfully passed, await returns a unique arrival index for each thread, which can be used to "elect" a leader that takes some special action in the next iteration. CyclicBarrier also lets you pass a **barrier action** to the constructor; this is a Runnable that is executed (in one of the subtask threads) when the barrier is successfully passed but before the blocked threads are released.
+
+**CellularAutomata** demonstrates using a barrier to compute a cellular automata simulation.
+When parallelizing a simulation, it is generally impractical to assign a separate thread to each element (in the case of Life, a cell); this would require too many threads, and the overhead of coordinating them would dwarf the computation. Instead, it makes sense to partition the problem into a number of subparts, let each thread solve a subpart, and then merge the results.
+
+:pencil:[CyclicBarrierTest.java](../../../../java/com/kellylin1115/interview/java/multithreading/CyclicBarrierTest.java)
