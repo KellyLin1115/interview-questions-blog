@@ -1,5 +1,6 @@
 package com.kellylin1115.interview.algorithms.stringarray;
 
+
 public class ConvertZigZag {
     private ConvertZigZag() {}
     
@@ -21,6 +22,5 @@ public class ConvertZigZag {
         convert(arr);
         for (int item : arr)
             System.out.print(item + ",");
-
     }
 }
