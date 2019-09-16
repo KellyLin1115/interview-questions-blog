@@ -183,3 +183,34 @@ The semaphore is initialized to the desired maximum size of the collection. The 
 
 :pencil:[BoundedHashSet.java](../../../../java/com/kellylin1115/interview/java/multithreading/BoundedHashSet.java)
 
+## Thread Factory
+Whenever a thread pool needs to create a thread, it does so through a **thread factory**
+    
+    public interface ThreadFactory {
+        Thread newThread(Runnable r);
+    }
+    
+The **default** thread factory creates a new, nondaemon thread with no special configuration. 
+Specifying a **thread factory** allows you to **customize** the configuration of **pool threads**. 
+ThreadFactory has a single method, newThread, that is called whenever a thread pool needs to create a new thread.
+
+There are a number of **reasons** to use a **custom thread factory**. 
+* You might want to specify an UncaughtExceptionHandler for pool threads, or instantiate an instance of a custom Thread class, such as one that performs debug logging. 
+* You might want to modify the priority (generally not a very good idea; see Section 10.3.1) or set the daemon status (again, not all that good an idea; see Section 7.4.2) of pool threads. 
+* Or maybe you just want to give pool threads more meaningful names to simplify interpreting thread dumps and error logs.
+
+
+**MyThreadFactory** illustrates a custom thread factory. It instantiates a new MyAppThread, passing a pool􏰁 specific name to the constructor so that threads from each pool can be distinguished in thread dumps and error logs.
+
+:pencil:[MyThreadFactory.java](../../../../java/com/kellylin1115/interview/java/multithreading/MyThreadFactory.java)
+   
+**MyAppThread**:
+* lets you provide a thread name, 
+* sets a custom UncaughtException-Handler that writes a message to a Logger, 
+* maintains statistics on how many threads have been created and destroyed, 
+* and optionally writes a debug message to the log when a thread is created or terminates.
+    
+:pencil:[MyAppThread.java](../../../../java/com/kellylin1115/interview/java/multithreading/MyAppThread.java)
+
+If your application takes advantage of security policies to grant permissions to particular codebases, you may want to use the **privilegedThreadFactory** factory method in Executors to construct your thread factory. It creates pool threads that have the same permissions, AccessControlContext, and contextClassLoader as the **thread creating the privilegedThreadFactory**. Otherwise, threads created by the thread pool inherit permissions from whatever client happens to be calling execute or submit at the time a new thread is needed, which could cause confusing security related exceptions.
+
