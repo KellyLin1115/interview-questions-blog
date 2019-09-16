@@ -17,8 +17,10 @@ A thread dump includes a stack trace for each running thread, similar to the sta
 Before generating a thread dump, the JVM searches the is-waiting-for graph for cycles to find deadlocks. If it finds one, it includes deadlock information identifying which locks and threads are involved, and where in the program the offending lock acquisitions are.
 
 1. Find the process id [PS ID]
+
     jps -l
 2. Execute jcmd [PS ID] Thread.print
+
     jcmd psid Thread.print
     
     The release of JDK 8 introduced Java Mission Control, Java Flight Recorder, and jcmd utility for diagnosing problems with JVM and Java applications. It is suggested to use the latest utility, **jcmd** instead of the previous **jstack** utility for enhanced diagnostics and reduced performance overhead.
@@ -40,8 +42,10 @@ Several implementations of **RejectedExecutionHandler** are provided, each imple
     new ThreadPoolExecutor.CallerRunsPolicy());
 
 * The **default** policy, **abort**, causes execute to throw the unchecked Rejected-ExecutionException; the caller can catch this exception and implement its own overflow handling as it sees fit. 
-* he **discard policy** **silently** discards the newly submitted task if it cannot be queued for execution; 
-* The** discard-oldest** policy discards the task that would otherwise be executed next and tries to resubmit the new task. 
+* The **discard** policy **silently** discards the newly submitted task
+  if it cannot be queued for execution;
+* The **discard-oldest** policy discards the task that would otherwise
+  be executed next and tries to resubmit the new task.
   
   (If the work queue is a priority queue, this discards the **highest priority** element, so the combination of a discard􏰁oldest saturation policy and a priority queue is not a good one.)
 * The **caller-runs** policy implements a form of throttling that neither discards tasks nor throws an exception, but instead tries to **slow down** the flow of new tasks by **pushing** some of the **work back to the caller**. 
