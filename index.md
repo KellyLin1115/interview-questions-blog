@@ -4,7 +4,8 @@
 
 :herb: 3. [Algorithms](src/main/resources/static/pages/algorithms/index-algorithms.md)
 
-:herb: 4. [OOPs Interview Questions](src/main/resources/static/pages/java/multithreading.md)
+:herb: 4.
+[Multithreading Interview Questions](src/main/resources/static/pages/java/multithreading.md)
 
 
 
