@@ -214,3 +214,49 @@ There are a number of **reasons** to use a **custom thread factory**.
 
 If your application takes advantage of security policies to grant permissions to particular codebases, you may want to use the **privilegedThreadFactory** factory method in Executors to construct your thread factory. It creates pool threads that have the same permissions, AccessControlContext, and contextClassLoader as the **thread creating the privilegedThreadFactory**. Otherwise, threads created by the thread pool inherit permissions from whatever client happens to be calling execute or submit at the time a new thread is needed, which could cause confusing security related exceptions.
 
+## synchronized与Lock的区别
+类别	| synchronized	| Lock
+---- | ---- | ----
+存在层次 | Java的关键字，在jvm层面上 | 是一个类
+锁的释放	| 1、以获取锁的线程执行完同步代码，释放锁 2、线程执行发生异常，jvm会让线程释放锁 | 在finally中必须释放锁，不然容易造成线程死锁
+锁的获取	| 假设A线程获得锁，B线程等待。如果A线程阻塞，B线程会一直等待 | 分情况而定，Lock有多个锁获取的方式，具体下面会说道，大致就是可以尝试获得锁，线程可以不用一直等待
+锁状态 |	无法判断 |可以判断
+锁类型 | 可重入 不可中断 非公平	| 可重入 可判断 可选择公平索或非公平锁
+
+ReentrantLock uses **non fair** lock by **default**
+
+    public ReentrantLock() {
+        sync = new NonfairSync();
+    }
+
+    public ReentrantLock(boolean fair) {
+        sync = fair ? new FairSync() : new NonfairSync();
+    }
+
+public interface Lock {
+
+    void lock();
+
+    void lockInterruptibly() throws InterruptedException;
+
+    boolean tryLock();
+
+    boolean tryLock(long time, TimeUnit unit) throws InterruptedException;
+
+    void unlock();
+
+    Condition newCondition();
+}
+
+##  Read-write Locks
+read-write locks allow a resource can be accessed by **multiple readers** or a **single writer** at a time, but **not both**.
+
+    public interface ReadWriteLock {
+        Lock readLock();
+        Lock writeLock();
+    }
+
+**ReadWriteMap** uses a ReentrantReadWriteLock to wrap a Map so that it can be shared safely by multiple readers and still prevent reader-writer or writer-writer conflicts
+
+:pencil:[ReadWriteMap.java](../../../../java/com/kellylin1115/interview/java/multithreading/ReadWriteMap.java)
+
