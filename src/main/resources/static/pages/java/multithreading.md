@@ -215,6 +215,7 @@ There are a number of **reasons** to use a **custom thread factory**.
 If your application takes advantage of security policies to grant permissions to particular codebases, you may want to use the **privilegedThreadFactory** factory method in Executors to construct your thread factory. It creates pool threads that have the same permissions, AccessControlContext, and contextClassLoader as the **thread creating the privilegedThreadFactory**. Otherwise, threads created by the thread pool inherit permissions from whatever client happens to be calling execute or submit at the time a new thread is needed, which could cause confusing security related exceptions.
 
 ## synchronized与Lock的区别
+
 类别	| synchronized	| Lock
 ---- | ---- | ----
 存在层次 | Java的关键字，在jvm层面上 | 是一个类
