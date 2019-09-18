@@ -209,9 +209,13 @@ Arrays can contain primitive data types as well as objects | Arraylists can cont
 ## 29. How many types of memory areas are allocated by JVM?
 
 **Method Area**: Method Area stores per-class structures such as the runtime constant pool, field, method data, and the code for methods.
+
 **Heap**: It is the runtime data area in which the memory is allocated to the objects
+
 **Stack**: Java Stack stores frames. It holds local variables and partial results, and plays a part in method invocation and return. Each thread has a private JVM stack, created at the same time as the thread. A new frame is created each time a method is invoked. A frame is destroyed when its method invocation completes.
+
 **Program Counter Register**: PC (program counter) register contains the address of the Java virtual machine instruction currently being executed.
+
 **Native Method Stack**: It contains all the native methods used in the application.
 
 ## 30. What is JIT compiler?
