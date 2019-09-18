@@ -206,3 +206,26 @@ Need to specify the index in order to add data	| No need to specify the index
 Arrays are not type parameterized | Arraylists are type parameterized
 Arrays can contain primitive data types as well as objects | Arraylists can contain only objects, no primitive data types are allowed
 
+## 29. How many types of memory areas are allocated by JVM?
+
+**Method Area**: Method Area stores per-class structures such as the runtime constant pool, field, method data, and the code for methods.
+**Heap**: It is the runtime data area in which the memory is allocated to the objects
+**Stack**: Java Stack stores frames. It holds local variables and partial results, and plays a part in method invocation and return. Each thread has a private JVM stack, created at the same time as the thread. A new frame is created each time a method is invoked. A frame is destroyed when its method invocation completes.
+**Program Counter Register**: PC (program counter) register contains the address of the Java virtual machine instruction currently being executed.
+**Native Method Stack**: It contains all the native methods used in the application.
+
+## 30. What is JIT compiler?
+Just-In-Time (JIT) compiler compiles the byte code of that method into native machine code to improve the performance of Java applications at run time. When a method has been compiled, the JVM calls the compiled code of that method directly instead of interpreting it.
+
+![](../../images/java/jvm-interpreter-jit.png) 
+
+**解释器与编译器**：
+* 当程序需要迅速启动和执行的时候，解释器可以省去编译的时间， 立即执行。
+* 当程序运行后，随着时间的推移， 编译器把越来越多的代码编译成本地代码后， 可以获得更高的执行效率。
+* 当程序运行环境中内存资源限制较大， 可以使用解释执行节约内存， 反之可以使用编译执行提升效率。
+* 解释器还可以作为编译器激进优化时的一个"逃生门"， 让编译器根据概率选择一些大多数都能提升运行速度的优化手段， 当激进优化的假设不成立，如加载了新类后类型继承结构出现变化，出现"罕见陷阱"（Uncommon Trap）时可以通过逆优化（Deoptimization）退回到解释状态继续执行。
+
+![](../../images/java/compiler-types-1.png) 
+
+![](../../images/java/compiler-types-2.png) 
+
