@@ -233,3 +233,35 @@ Just-In-Time (JIT) compiler compiles the byte code of that method into native ma
 
 ![](../../images/java/compiler-types-2.png) 
 
+## 31. Can we make the abstract methods static in Java?
+In Java, if we make the abstract methods static, It will become the part of the class, and we can directly call it which is unnecessary. Calling an undefined method is completely useless therefore it is not allowed.
+
+## 32. Can we declare the static variables and methods in an abstract class?
+Yes, we can declare static variables and methods in an abstract method. As we know that there is no requirement to make the object to access the static context, therefore, we can access the static context declared inside the abstract class by using the name of the abstract class.
+
+## 33. Can we assign the reference to this variable?
+No, this cannot be assigned to any value because it always points to the current class object and this is the **final** reference in Java. However, if we try to do so, the compiler error will be shown.
+
+## 34.  What is aggregation?
+Aggregation can be defined as the relationship between two classes where the aggregate class **contains a reference** to the class it owns. Aggregation is best described as a **has-a** relationship. 
+
+## 35. What is composition?
+Holding the reference of a class within some other class is known as composition. When an object contains the other object, if the contained object **cannot** exist without the existence of container object, then it is called composition. In other words, we can say that composition is the **particular case of aggregation** which represents a **stronger** relationship between two objects. 
+
+## 36. What is the difference between aggregation and composition?
+Aggregation represents the weak relationship whereas composition represents the strong relationship. For example, the bike has an indicator (aggregation), but the bike has an engine (composition).
+
+## 37. Can you use this() and super() both in a constructor?
+No, because this() and super() must be the **first** statement in the class constructor.
+
+## 38. Can we override the private methods?
+No, we cannot override the private methods because the scope of private methods is limited to the class and we cannot access them outside of the class.
+
+## 39. Can we change the scope of the overridden method in the subclass?
+Yes, we can change the scope of the overridden method in the subclass. However, we must notice that we **cannot decrease** the accessibility of the method. The following point must be taken care of while changing the accessibility of the method.
+
+* The private can be changed to protected, public, or default.
+* The protected can be changed to public or default.
+* The default can be changed to public.
+* The public will always remain public.
+

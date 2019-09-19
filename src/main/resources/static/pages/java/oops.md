@@ -8,7 +8,7 @@
 ## 2. What are main concepts of OOP in Java
 There are **four** main OOP concepts in Java:
 
-1. **Polymorphism**: It refers to the ability of OOPs programming languages to differentiate between entities with the same name efficiently. This is done by Java with the help of the signature and declaration of these entities.
+1. Polymorphism: It refers to the ability of OOPs programming languages to differentiate between entities with the same name efficiently. This is done by Java with the help of the signature and declaration of these entities.
 
     Polymorphism in Java are mainly of 2 types:
     * Overloading in Java
@@ -28,3 +28,7 @@ There are **four** main OOP concepts in Java:
     Encapsulation can be **achieved** by Declaring all the variables in the class as private and writing public methods in the class to set and get the values of variables.
 
 4. **Abstraction**: It is a process of hiding the implementation details from the user, only the functionality will be provided to the user. In Java, abstraction is achieved using abstract classes and interfaces.
+
+## What is an object?
+The Object is the real-time entity having some **state** and **behavior**. In Java, Object is an **instance** of the class having the instance variables as the state of the object and the methods as the behavior of the object. The object of a class can be created by using the **new** keyword.
+
