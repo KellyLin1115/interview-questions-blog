@@ -328,9 +328,9 @@ String pool is the space reserved in the heap memory that can be used to store t
 ## 50. Regular expressions
 In Java, ‘ \ \ ‘ means "I’m inserting a regular expression backslash, so that the following character has special meaning." For example, if you want to indicate a digit, your regular expression string will be ‘\\d’. If you want to insert a literal backslash, you say ‘\\\\’- However, things like newlines and tabs just use a single backslash: ‘\n\t’.
 
-System.out.println("+911".matches("(-|\\+)?\\d+")); --> true
+    System.out.println("+911".matches("(-|\\+)?\\d+")); --> true
 
-(-|\\+)? means that this part of the string may be either a ‘-’ or a ‘+’ or nothing (because of the ‘?’). Because the ‘+’ character has special meaning in regular expressions, it must be escaped with a ‘\\’ in order to appear as an ordinary character in the expression.
+    (-|\\+)? means that this part of the string may be either a ‘-’ or a ‘+’ or nothing (because of the ‘?’). Because the ‘+’ character has special meaning in regular expressions, it must be escaped with a ‘\\’ in order to appear as an ordinary character in the expression.
 
 **Pattern** and **Matcher**
 * compile a regular expression by using the static Pattern.compile( ) method. This produces a Pattern object based on its String argument. 
