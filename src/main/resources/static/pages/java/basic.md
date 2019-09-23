@@ -286,3 +286,22 @@ No, because methods of an interface are abstract by default, and we can not use 
 ## 45. Can the Interface be final?
 No, because an interface needs to be implemented by the other class and if it is final, it can't be implemented by any class.
 
+## 46. How to create packages in Java
+* If you are using the programming IDEs like Eclipse, NetBeans, MyEclipse, etc. click on file->new->project and eclipse will ask you to enter the name of the package. It will create the project package containing various directories such as src, etc. 
+* If you are using an editor like notepad for java programming, use the following steps to create the package.
+    
+    1. **Define** a **package** package_name in you class. Create the class with the name class_name and save this file with class_name.java.
+    
+    2. Now compile the file by running the following command on the terminal.
+    
+        javac -d . your_class_name.java  
+    
+        The above command creates the package with the name package_name in the present working directory.
+    
+    3. Now, run the class file by using the absolute class file name, like following.
+        
+        java package_name.class_name  
+        
+## 47. Do I need to import java.lang package any time? Why?
+No. It is by **default** loaded internally by the JVM.
+

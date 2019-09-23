@@ -7,13 +7,13 @@
 :herb: 4.
 [Multithreading Interview Questions](src/main/resources/static/pages/java/multithreading.md)
 
+:herb: 5. [Exception Interview Questions](src/main/resources/static/pages/java/exception.md)
 
 
 JDBC Interview Questions
 Spring Interview Questions
 Hibernate Interview Questions
 JSP Interview Questions
-Exception and thread Interview Questions
 Performance Tuning
 
 

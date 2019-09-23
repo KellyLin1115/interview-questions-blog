@@ -6,10 +6,7 @@ public class Test {
         i = i+1;
     }
     public static void main(String[] args) {
-        System.out.println(args==null);
-        Test t = new Test();
-        t.add();
-        System.out.println(Test.i);
+        System.out.println("Hello Kelly");
     }
 
 }
