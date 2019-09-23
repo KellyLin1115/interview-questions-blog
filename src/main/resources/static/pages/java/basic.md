@@ -305,3 +305,89 @@ No, because an interface needs to be implemented by the other class and if it is
 ## 47. Do I need to import java.lang package any time? Why?
 No. It is by **default** loaded internally by the JVM.
 
+## 48. What is String Pool?
+String pool is the space reserved in the heap memory that can be used to store the strings. The main advantage of using the String pool is whenever we create a string literal; the JVM checks the "string constant pool" first. If the string already exists in the pool, a reference to the pooled instance is returned. If the string doesn't exist in the pool, a new string instance is created and placed in the pool. Therefore, it saves the memory by avoiding the duplicacy.
+
+## 49. How many ways can we create the string object?
+1) String Literal
+
+    Java String literal is created by using double quotes. For Example:
+    
+    String s="welcome";  
+    Each time you create a string literal, the JVM checks the "string constant pool" first. If the string already exists in the pool, a reference to the pooled instance is returned. If the string doesn't exist in the pool, a new string instance is created and placed in the pool. String objects are stored in a special memory area known as the string constant pool For example:
+    
+    String s1="Welcome";  
+    String s2="Welcome";//It **doesn't** create a new instance  
+
+2) By new keyword
+
+    String s=new String("Welcome");//creates **two** objects and one reference variable  
+    
+    In such case, JVM will create a new string object in normal (non-pool) heap memory, and the literal "Welcome" will be placed in the constant string pool. The variable s will refer to the object in a heap (non-pool)
+    
+## 50. Regular expressions
+In Java, ‘ \ \ ‘ means "I’m inserting a regular expression backslash, so that the following character has special meaning." For example, if you want to indicate a digit, your regular expression string will be ‘\\d’. If you want to insert a literal backslash, you say ‘\\\\’- However, things like newlines and tabs just use a single backslash: ‘\n\t’.
+
+System.out.println("+911".matches("(-|\\+)?\\d+")); --> true
+
+(-|\\+)? means that this part of the string may be either a ‘-’ or a ‘+’ or nothing (because of the ‘?’). Because the ‘+’ character has special meaning in regular expressions, it must be escaped with a ‘\\’ in order to appear as an ordinary character in the expression.
+
+**Pattern** and **Matcher**
+* compile a regular expression by using the static Pattern.compile( ) method. This produces a Pattern object based on its String argument. 
+* You use the Pattern by calling the matcher( ) method, passing the string that you want to search. 
+* The matcher( ) method produces a Matcher object, which has a set of operations to choose from
+
+      Pattern p = Pattern.compile(...);
+      Matcher m = p.matcher(...);
+      while(m.find()) {
+           print("Match \"" + m.group() + "\" at positions " +
+           m.start() + "-" + (m.end() - 1));
+      }
+      
+public int **start**(int group) returns the start index of the group found in the previous match operation.
+
+public int **end**(int group) returns the index of the last character, **plus one**, of the group found in the previous match operation.
+
+## 51. Can we access the non-final local variable, inside the local inner class?
+No, the local variable **must be constant** if you want to access it in the local inner class.
+
+## 52. What is the nested interface?
+An **Interface** that is declared **inside** the **interface** or **class** is known as the **nested interface**. It is **static by default**. The nested interfaces are used to group related interfaces so that they can be easy to maintain. The external interface or class must refer to the nested interface. It **can't** be accessed directly. The nested interface **must be public** if it is declared **inside the interface** but it can have **any access modifier** if declared **within the class**. The syntax of the nested interface is given as follows.
+
+Example of nested interface which is declared **within the interface**
+
+    interface Showable{  
+      void show();  
+      interface Message{  
+       void msg();  
+      }  
+    }  
+    class TestNestedInterface1 implements Showable.Message{  
+     public void msg(){System.out.println("Hello nested interface");}  
+      
+     public static void main(String args[]){  
+      Showable.Message message=new TestNestedInterface1();//upcasting here  
+      message.msg();  
+     }  
+    }  
+    
+Example of nested interface which is declared **within the class**
+
+    class A{  
+      interface Message{  
+       void msg();  
+      }  
+    }  
+      
+    class TestNestedInterface2 implements A.Message{  
+     public void msg(){System.out.println("Hello nested interface");}  
+      
+     public static void main(String args[]){  
+      A.Message message=new TestNestedInterface2();//upcasting here  
+      message.msg();  
+     }  
+    }  
+    
+## 53. Can an Interface have a class?
+Yes, they are **static** implicitly.
+
