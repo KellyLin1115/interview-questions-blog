@@ -265,3 +265,24 @@ Yes, we can change the scope of the overridden method in the subclass. However, 
 * The default can be changed to public.
 * The public will always remain public.
 
+## 40. Can we modify the throws clause of the superclass method while overriding it in the subclass?
+Yes, we can modify the throws clause of the superclass method while overriding it in the subclass. However, there are some rules which are to be followed while overriding in case of exception handling.
+
+* If the superclass method does not declare an exception, subclass overridden method cannot declare the checked exception, but it can declare the unchecked exception.
+* If the superclass method declares an exception, subclass overridden method can declare same, subclass exception or no exception but cannot declare parent exception.
+
+## 41. What is the abstract class?
+A class that is declared as **abstract** is known as an abstract class. It needs to be extended and its method implemented. It **cannot** be instantiated. It can **have** abstract methods, non-abstract methods, **constructors**, and static methods.
+
+## 42. Can you use abstract and final both with a method?
+No, because we need to override the abstract method to provide its implementation, whereas we can't override the final method.
+
+## 43.  What is the interface?
+The interface is a blueprint for a class that has **static constants** and **abstract methods**. It can be used to achieve **full abstraction** and **multiple inheritance**. It is a mechanism to achieve abstraction. There can be only abstract methods in the Java interface, not method body. It **cannot be instantiated** just like the abstract class. However, we need to implement it to define its methods. Since Java 8, we can have the default, static, and private methods in an interface.
+
+## 44. Can you declare an interface method static?
+No, because methods of an interface are abstract by default, and we can not use static and abstract together.
+
+## 45. Can the Interface be final?
+No, because an interface needs to be implemented by the other class and if it is final, it can't be implemented by any class.
+
