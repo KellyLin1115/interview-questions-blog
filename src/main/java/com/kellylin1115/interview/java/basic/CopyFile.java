@@ -4,61 +4,61 @@ import java.io.*;
 
 public class CopyFile {
     public static void copy(File oldFile, File newFile){
-        InputStream inputStream = null ;
-        BufferedInputStream bufferedInputStream = null ;
+        InputStream in = null ;
+        BufferedInputStream bis = null ;
 
-        OutputStream outputStream = null ;
-        BufferedOutputStream bufferedOutputStream = null ;
+        OutputStream out = null ;
+        BufferedOutputStream bos = null ;
 
         try {
-            inputStream = new FileInputStream( oldFile ) ;
-            bufferedInputStream = new BufferedInputStream( inputStream ) ;
+            in = new FileInputStream( oldFile ) ;
+            bis = new BufferedInputStream( in ) ;
 
-            outputStream = new FileOutputStream( newFile ) ;
-            bufferedOutputStream = new BufferedOutputStream( outputStream ) ;
+            out = new FileOutputStream( newFile ) ;
+            bos = new BufferedOutputStream( out ) ;
 
             byte[] b=new byte[1024];   //代表一次最多读取1KB的内容
 
             int length = 0 ; //代表实际读取的字节数
-            while( (length = bufferedInputStream.read( b ) )!= -1 ){
+            while( (length = bis.read( b ) )!= -1 ){
                 //length 代表实际读取的字节数
-                bufferedOutputStream.write(b, 0, length );
+                bos.write(b, 0, length );
             }
             //缓冲区的内容写入到文件
-            bufferedOutputStream.flush();
+            bos.flush();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }catch (IOException e) {
             e.printStackTrace();
         }finally {
 
-            if( bufferedOutputStream != null ){
+            if( bos != null ){
                 try {
-                    bufferedOutputStream.close();
+                    bos.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
 
-            if( bufferedInputStream != null){
+            if( bis != null){
                 try {
-                    bufferedInputStream.close();
+                    bis.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
 
-            if( inputStream != null ){
+            if( in != null ){
                 try {
-                    inputStream.close();
+                    in.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
 
-            if ( outputStream != null ) {
+            if ( out != null ) {
                 try {
-                    outputStream.close();
+                    out.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
