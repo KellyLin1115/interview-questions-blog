@@ -9,6 +9,7 @@
 
 :herb: 5. [Exception Interview Questions](src/main/resources/static/pages/java/exception.md)
 
+:herb: 6. [Garbage Collection Interview Questions](src/main/resources/static/pages/java/gc.md)
 
 JDBC Interview Questions
 Spring Interview Questions

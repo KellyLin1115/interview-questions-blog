@@ -391,3 +391,51 @@ Example of nested interface which is declared **within the class**
 ## 53. Can an Interface have a class?
 Yes, they are **static** implicitly.
 
+## 54. What do you understand by an IO stream?
+The stream is **a sequence of data** that flows from source to destination. It is composed of **bytes**. Java provides the following three standard streams −
+
+* Standard Input − This is used to **feed the data** to user's **program** and usually a **keyboard** is used as standard input stream and represented as System.in.
+
+* Standard Output − This is used to **output the data** produced by the user's **program** and usually a **computer screen** is used for standard output stream and represented as System.out.
+
+* Standard Error − This is used to **output the error data** produced by the user's program and usually a **computer screen** is used for standard error stream and represented as System.err.
+
+## 55. What is the difference between the Reader/Writer class hierarchy and the InputStream/OutputStream class hierarchy?
+The **Reader/Writer** class hierarchy is **character-oriented**, and the **InputStream/OutputStream** class hierarchy is **byte-oriented**. The ByteStream classes are used to perform input-output of 8-bit bytes whereas the CharacterStream classes are used to perform the input/output for the 16-bit Unicode system. There are many classes in the ByteStream class hierarchy, but the most frequently used classes are **FileInputStream** and **FileOutputStream**. The most frequently used classes CharacterStream class hierarchy is **FileReader** and **FileWriter**.
+
+## 56. What are the super most classes for all the streams?
+All the stream classes can be divided into two types of classes that are **ByteStream** classes and **CharacterStream** Classes. The ByteStream classes are further divided into **InputStream** classes and **OutputStream** classes. CharacterStream classes are also divided into **Reader** classes and **Writer** classes. 
+The SuperMost classes for all the InputStream classes is java.io.InputStream and for all the output stream classes is java.io.OutPutStream. Similarly, for all the reader classes, the super-most class is java.io.Reader, and for all the writer classes, it is java.io.Writer.
+
+## 57. What are the FileInputStream and FileOutputStream?
+Java FileOutputStream is an output stream used for writing data to a file. If you have some primitive values to write into a file, use FileOutputStream class. You can write byte-oriented as well as character-oriented data through the FileOutputStream class. However, for character-oriented data, it is preferred to use FileWriter than FileOutputStream. 
+
+Java FileInputStream class obtains input bytes from a file. It is used for reading byte-oriented data (streams of raw bytes) such as image data, audio, video, etc. You can also read character-stream data. However, for reading streams of characters, it is recommended to use FileReader class.
+
+    public static void main(String args[]) throws IOException {
+          FileReader in = null;
+          FileWriter out = null;
+    
+          try {
+             in = new FileReader("input.txt");
+             out = new FileWriter("output.txt");
+             
+             int c;
+             while ((c = in.read()) != -1) {
+                out.write(c);
+             }
+          }finally {
+             if (in != null) {
+                in.close();
+             }
+             if (out != null) {
+                out.close();
+             }
+          }
+       }
+
+## 58. What is the purpose of using BufferedInputStream and BufferedOutputStream classes?
+Java BufferedOutputStream class is used for buffering an output stream. It internally uses a buffer to store data. It adds more efficiency than to write data directly into a stream. So, it makes the performance fast. Whereas, Java BufferedInputStream class is used to read information from the stream. It internally uses the buffer mechanism to make the performance fast.
+
+:pencil:[CopyFile.java](../../../../java/com/kellylin1115/interview/java/basic/CopyFile.java)
+
