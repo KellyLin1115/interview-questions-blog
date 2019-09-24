@@ -439,3 +439,50 @@ Java BufferedOutputStream class is used for buffering an output stream. It inter
 
 :pencil:[CopyFile.java](../../../../java/com/kellylin1115/interview/java/basic/CopyFile.java)
 
+## 59. What is serialization?
+Serialization in Java is a mechanism of writing the state of an object into a **byte stream**. It is used primarily in Hibernate, RMI, JPA, EJB and JMS technologies. It is mainly used to **travel object's state on the network** (which is known as marshaling). **Serializable interface** is used to perform serialization. It is helpful when you require to save the state of a program to storage such as the file. At a later point of time, the content of this file can be **restored** using **deserialization**.
+
+## 60. How can you avoid serialization in child class if the base class is implementing the Serializable interface?
+It is very tricky to prevent serialization of child class if the base class is intended to implement the Serializable interface. However, we cannot do it directly, but the serialization can be avoided by implementing the writeObject() or readObject() methods in the subclass and throw NotSerializableException from these methods. 
+
+    class Person implements Serializable {
+        String name = " ";
+        public Person(String name) {
+            this.name = name;
+        }
+    }
+    
+    class Employee extends Person {
+        float salary;
+        public Employee(String name, float salary) {
+            super(name);
+            this.salary = salary;
+        }
+        
+        private void writeObject(ObjectOutputStream out) throws IOException {
+            throw new NotSerializableException();
+        }
+        private void readObject(ObjectInputStream in) throws IOException {
+            throw new NotSerializableException();
+        }
+    } 
+
+## 61. What is Deserialization?
+Deserialization is the process of reconstructing the object from the serialized state. It is the reverse operation of serialization. An ObjectInputStream deserializes objects and primitive data written using an ObjectOutputStream
+
+    ObjectInputStream in=new ObjectInputStream(new FileInputStream("f.txt"));  
+    Student s=(Student)in.readObject();  
+    in.close();
+    
+## 62.  What is the transient keyword?
+If you define any data member as transient, it will not be serialized.
+
+## 63. What is Externalizable?
+The Externalizable interface is used to write the state of an object into a byte stream in a compressed format. It is not a marker interface.
+It contains two methods, i.e., writeExternal() and readExternal().
+We must call a public default constructor while using this interface.
+The Externalizable interface provides control of the serialization logic to the programmer.
+
+:pencil:[Person.java](../../../../java/com/kellylin1115/interview/java/basic/Person.java)
+
+## 64. 
