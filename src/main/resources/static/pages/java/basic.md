@@ -485,4 +485,84 @@ The Externalizable interface provides control of the serialization logic to the 
 
 :pencil:[Person.java](../../../../java/com/kellylin1115/interview/java/basic/Person.java)
 
-## 64. 
+## 64. Give a brief description of Java socket programming?
+Java Socket programming is used for **communication** between the applications running on **different JRE**. Java Socket programming can be **connection-oriented** or **connectionless**. Socket and ServerSocket classes are used for connection-oriented socket programming and DatagramSocket, and DatagramPacket classes are used for connectionless socket programming. The client in socket programming must know two information:
+* IP address of the server
+* port number
+
+## 65. What is Socket?
+A socket is simply an **endpoint** for **communications** between the **machines**. It provides the connection mechanism to connect the two computers using **TCP**. The Socket class can be used to create a socket.
+
+## 66. What are the steps that are followed when two computers connect through TCP?
+There are the following steps that are performed when two computers connect through TCP.
+
+* The ServerSocket object is instantiated by the server which denotes the port number to which, the connection will be made.
+* After instantiating the ServerSocket object, the server invokes accept() method of ServerSocket class which makes server wait until the client attempts to connect to the server on the given port.
+* Meanwhile, the server is waiting, a socket is created by the client by instantiating Socket class. The socket class constructor accepts the server port number and server name.
+* The Socket class constructor attempts to connect with the server on the specified name. If the connection is established, the client will have a socket object that can communicate with the server.
+* The accept() method invoked by the server returns a reference to the new socket on the server that is connected with the server.
+
+## 67. Write a program in Java to establish a connection between client and server?
+
+    public class MyServer {
+        public static void main(String[] args) throws IOException {
+            ServerSocket ss = new ServerSocket(6666);
+            Socket s = ss.accept();
+            DataInputStream dis = new DataInputStream(s.getInputStream());
+            String str = dis.readUTF();
+            System.out.println("Data from client: " + str);
+            dis.close();
+        }
+    }
+
+:pencil:[MyServer.java](../../../../java/com/kellylin1115/interview/java/basic/MyServer.java)
+
+    public class MyClient {
+        public static void main(String[] args) throws IOException {
+            Socket s = new Socket("localhost", 6666);
+            DataOutputStream dos = new DataOutputStream(s.getOutputStream());
+            dos.writeUTF("First message!");
+            dos.flush();
+            dos.close();
+        }
+    }
+    
+:pencil:[MyClient.java](../../../../java/com/kellylin1115/interview/java/basic/MyClient.java)
+
+## 68. How do I convert a numeric IP address like 192.18.97.39 into a hostname like java.sun.com?
+    InetAddress.getByName("192.18.97.39").getHostName();
+    
+## 69. Reflection in Java
+Reflection is an API which is used to examine or modify the behavior of methods, classes, interfaces at runtime.
+
+[Reflection](https://www.geeksforgeeks.org/reflection-in-java/)
+
+## 70. What is the purpose of using java.lang.Class class?
+The java.lang.Class class performs mainly two tasks:
+
+Provides methods to get the metadata of a class at runtime.
+Provides methods to examine and change the runtime behavior of a class.
+
+## 71. What are the ways to instantiate the Class class?
+There are three ways to instantiate the Class class.
+
+* forName() method of Class class: The forName() method is used to load the class dynamically. It returns the instance of Class class. It should be used if you know the fully qualified name of the class. This cannot be used for primitive types.
+    
+    Class c = Class.forName("java.lang.String");
+
+* getClass() method of Object class: It returns the instance of Class class. It should be used if you know the type. Moreover, it can be used with primitives.
+
+* the .class syntax: If a type is available, but there is no instance then it is possible to obtain a Class by appending ".class" to the name of the type. It can be used for primitive data type also.
+
+    Class c = int.class; 
+    or
+    Class c = Integer.TYPE; 
+
+## 72. What is the purpose of using javap?
+The javap command disassembles a class file. The javap command displays information about the fields, constructors and methods present in a class file.
+
+**Syntax**
+
+javap fully_class_name
+
+## 73. 
