@@ -565,4 +565,105 @@ The javap command disassembles a class file. The javap command displays informat
 
 javap fully_class_name
 
-## 73. 
+## 73. What are autoboxing and unboxing? When does it occur?
+The autoboxing is the process of converting primitive data type to the corresponding wrapper class object, eg., int to Integer. The unboxing is the process of converting wrapper class object to primitive data type. For eg., integer to int. Unboxing and autoboxing occur automatically in Java. However, we can externally convert one into another by using the methods like valueOf() or xxxValue().
+
+It can occur whenever a wrapper class object is expected, and primitive data type is provided or vice versa.
+
+* Adding primitive types into Collection like ArrayList in Java.
+* Creating an instance of parameterized classes ,e.g., ThreadLocal which expect Type.
+* Java automatically converts primitive to object whenever one is required and another is provided in the method calling.
+* When a primitive type is assigned to an object type.
+
+## 74. What is object cloning?
+The object cloning is a way to create an exact copy of an object. The clone() method of the Object class is used to clone an object. The java.lang.Cloneable interface **must be implemented** by the class whose object clone we want to create. If we don't implement Cloneable interface, clone() method generates **CloneNotSupportedException**. The clone() method is defined in the Object class. The syntax of the clone() method is as follows:
+
+**protected** Object clone() throws CloneNotSupportedException
+
+## 75.  What are the advantages and disadvantages of object cloning?
+**Advantage of Object Cloning**
+* You don't need to write lengthy and repetitive codes. Just use an abstract class with a 4- or 5-line long clone() method.
+* It is the easiest and most efficient way of copying objects, especially if we are applying it to an already developed or an old project. Just define a parent class, implement Cloneable in it, provide the definition of the clone() method and the task will be done.
+* Clone() is the **fastest** way to copy the **array**.
+
+**Disadvantage of Object Cloning**
+* To use the Object.clone() method, we have to change many syntaxes to our code, like implementing a Cloneable interface, defining the clone() method and handling CloneNotSupportedException, and finally, calling Object.clone(), etc.
+* We have to **implement the Cloneable interface** while it does not have any methods in it. We have to use it to tell the JVM that we can perform a clone() on our object.
+* Object.clone() is **protected**, so we have to provide our own clone() and indirectly call Object.clone() from it.
+* Object.clone() does not invoke any constructor, so we do not have any control over object construction.
+* If you want to write a clone method in a child class, then **all of its superclasses** should define the clone() method in them or inherit it from another parent class. Otherwise, the **super.clone()** chain will fail.
+* Object.clone() supports only **shallow** copying, but we will need to override it if we need deep cloning.
+
+## 76. What is a native method?
+A native method is a method that is implemented in a language other than Java. Natives methods are sometimes also referred to as foreign methods.
+
+## 77.  What is the purpose of the strictfp keyword?
+Java **strictfp** keyword ensures that you will get the **same result** on **every platform** if you perform operations in the **floating-point** variable. The precision may differ from platform to platform that is why java programming language has provided the strictfp keyword so that you get the same result on every platform. 
+
+你可以将一个**类**、**接口**以及**方法**声明为strictfp，但是**不允许**对**接口中的方法**以及**构造函数**声明strictfp关键字，例如下面的代码：
+
+1. **合法**的使用关键字strictfp
+
+    strictfp interface A {}
+    public strictfp class FpDemo1 {
+        strictfp void f() {}
+    }
+2. **错误**的使用方法
+
+    interface A {
+        strictfp void f();
+    }
+    public class FpDemo2 {
+        strictfp FpDemo2() {}
+    }
+
+## 78. What is a JavaBean
+
+A JavaBean is a Java object that satisfies certain programming conventions:
+
+* The JavaBean class must implement either Serializable or Externalizable
+
+* The JavaBean class must have a no-arg constructor
+
+* All JavaBean properties must have public setter and getter methods
+
+* All JavaBean instance variables should be private
+
+## 79.  What is the purpose of using the Java bean?
+According to Java white paper, it is a reusable software component. A bean encapsulates many objects into one object so that we can access this object from multiple places. Moreover, it provides the easy maintenance.
+
+## 80. What is RMI?
+The RMI (Remote Method Invocation) is an API that provides a mechanism to create the distributed application in java. The RMI allows an object to invoke methods on an object running in another JVM. The RMI provides remote communication between the applications using two objects stub and skeleton.
+
+## 81. What is the purpose of stub and skeleton?
+**Stub**
+
+The stub is an object, acts as a gateway for the client side. All the outgoing requests are routed through it. It resides at the client side and represents the remote object. When the caller invokes the method on the stub object, it does the following tasks:
+
+- It initiates a connection with remote Virtual Machine (JVM).
+- It writes and transmits (marshals) the parameters to the remote Virtual Machine (JVM).
+- It waits for the result.
+- It reads (unmarshals) the return value or exception.
+- It finally, returns the value to the caller.
+
+**Skeleton**
+
+The skeleton is an object, acts as a gateway for the server side object. All the incoming requests are routed through it. When the skeleton receives the incoming request, it does the following tasks:
+
+- It reads the parameter for the remote method.
+- It invokes the method on the actual remote object.
+- It writes and transmits (marshals) the result to the caller.
+
+## 82. What are the steps involved to write RMI based programs?
+There are 6 steps which are performed to write RMI based programs.
+
+- Create the remote interface.
+- Provide the implementation of the remote interface.
+- Compile the implementation class and create the stub and skeleton objects using the rmic tool.
+- Start the registry service by the rmiregistry tool.
+- Create and start the remote application.
+- Create and start the client application.
+
+[Example](https://www.geeksforgeeks.org/remote-method-invocation-in-java/)
+
+## 83. 

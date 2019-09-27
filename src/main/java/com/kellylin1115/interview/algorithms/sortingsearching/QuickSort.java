@@ -21,18 +21,17 @@ public class QuickSort {
     private static int partition(int[] arr, int l, int h){
         int pivot = arr[l];
         int i = l, j = h + 1;
-        while((i + 1)< j) {
-            while(i < h){
-                if(arr[++i] >= pivot) break;
+        while(true) {
+            while(arr[++i] < pivot){
                 if (i == h) {
                     swap(arr, l, i);
                     return i;
                 }
             }
-            while(j > (l+1)){
-                if(arr[--j]<= pivot) break;
+            while(arr[--j] > pivot){
                 if (j == l + 1) return l;
             }
+
             if(j > i) {
                 swap(arr, i, j);
             }else{
@@ -40,8 +39,6 @@ public class QuickSort {
                 return j;
             }
         }
-        swap(arr, i, l);
-        return i;
     }
 
     private static void shuffle(int[] arr){
