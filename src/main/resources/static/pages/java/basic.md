@@ -666,4 +666,138 @@ There are 6 steps which are performed to write RMI based programs.
 
 [Example](https://www.geeksforgeeks.org/remote-method-invocation-in-java/)
 
-## 83. 
+## 83.  What is the difference between Iterator and ListIterator?
+Iterator traverses the elements in the forward direction only whereas ListIterator traverses the elements into forward and backward direction.
+
+ Iterator |	ListIterator
+ -------- | ------------
+The Iterator traverses the elements in the forward direction only. | ListIterator traverses the elements in backward and forward directions both.
+The Iterator can be used in List, Set, and Queue. | ListIterator can be used in List only.
+The Iterator can only perform remove operation while traversing the collection.	| ListIterator can perform ?add,? ?remove,? and ?set? operation while traversing the collection.
+
+## 84. What is the difference between Iterator and Enumeration?
+
+Iterator | Enumeration
+-------- | -----------
+The Iterator can traverse legacy and non-legacy elements. |	Enumeration can traverse only legacy elements.
+The Iterator is fail-fast.	| Enumeration is not fail-fast.
+The Iterator is slower than Enumeration. |	Enumeration is faster than Iterator.
+The Iterator can perform remove operation while traversing the collection. |	The Enumeration can perform only traverse operation on the collection.
+
+## 85. What is the difference between List and Set?
+The List and Set both extend the collection interface. However, there are some differences between the both which are listed below.
+
+- The List can contain duplicate elements whereas Set includes unique items.
+- The List is an ordered collection which maintains the insertion order whereas Set is an unordered collection which does not preserve the insertion order.
+- The List interface contains a single legacy class which is Vector class whereas Set interface does not have any legacy class.
+- The List interface can allow n number of null values whereas Set interface only allows a single null value.
+
+## 86. What is the difference between HashSet and TreeSet?
+The HashSet and TreeSet, both classes, implement Set interface. The differences between the both are listed below.
+
+- HashSet maintains no order whereas TreeSet maintains ascending order.
+- HashSet impended by hash table whereas TreeSet implemented by a Tree structure.
+- HashSet performs faster than TreeSet.
+- HashSet is backed by HashMap whereas TreeSet is backed by TreeMap.
+
+## 87. What is the difference between HashSet and HashMap?
+The differences between the HashSet and HashMap are listed below.
+
+- HashSet contains only values whereas HashMap includes the entry (key, value). HashSet can be iterated, but HashMap needs to convert into Set to be iterated.
+- HashSet implements Set interface whereas HashMap implements the Map interface
+- HashSet cannot have any duplicate value whereas HashMap can contain duplicate values with unique keys.
+- **HashSet** contains the only **single** number of **null** value whereas HashMap can hold a single null key with n number of null values.
+
+## 88. What is the difference between HashMap and TreeMap?
+The differences between the HashMap and TreeMap are given below.
+
+- HashMap maintains no order, but TreeMap maintains ascending order.
+- HashMap is implemented by hash table whereas TreeMap is implemented by a Tree structure.
+- HashMap can be sorted by Key or value whereas TreeMap can be sorted by Key.
+- HashMap may contain a null key with multiple null values whereas **TreeMap cannot** hold a **null key** but can have multiple null values.
+
+
+## 89. How to Sort HashMap in Java based on Keys and Values
+Steps to sort HashMap by values:
+- Get all entries by calling entrySet() method of Map
+- Create a custom Comparator to sort entries based upon values
+- Convert entry set to list
+- Sort entry list by using Collections.sort() method by passing your value comparator
+- Create a LinkedHashMap by adding entries in sorted order.
+
+Example:
+
+    HashMap<String, String> map = new HashMap<String, String>();
+    map.put("key3", "value3");
+    map.put("key1", "value1");
+    map.put("key2", "value2");
+    
+    Set<Map.Entry<String, String>> entries = map.entrySet();
+    List<Map.Entry<String, String>> entriesList = new ArrayList<>(entries);
+    
+    Comparator<Map.Entry<String, String>> comparator = new Comparator<Map.Entry<String, String>>() {
+        @Override
+        public int compare(Map.Entry<String, String> o1, Map.Entry<String, String> o2) {
+            String value1 = o1.getValue();
+            String value2 = o2.getValue();
+            return value1.compareTo(value2);
+        }
+    };
+    
+    Collections.sort(entriesList, comparator);
+    
+    LinkedHashMap<String, String> sortedMap = new LinkedHashMap(entriesList.size());
+    for (Map.Entry<String, String> entry : entriesList)
+        sortedMap.put(entry.getKey(), entry.getValue());
+   
+## 90.  What is the difference between HashMap and Hashtable?
+
+HashMap	| Hashtable
+------- | ----------
+HashMap is not synchronized. |	Hashtable is synchronized.
+HashMap can contain one null key and multiple null values.	| Hashtable cannot contain any null key or null value.
+HashMap is not ?thread-safe,? so it is useful for non-threaded applications. | Hashtable is thread-safe, and it can be shared between various threads.
+HashMap inherits the AbstractMap class	| Hashtable inherits the Dictionary class.
+
+## 91.  What do you understand by BlockingQueue?
+BlockingQueue is an **interface** which **extends** the **Queue** interface. It **provides concurrency** in the operations like retrieval, insertion, deletion. While retrieval of any element, it waits for the queue to be non-empty. While storing the elements, it waits for the available space. BlockingQueue **cannot contain null** elements, and implementation of BlockingQueue is thread-safe.
+
+public interface BlockingQueue<E> extends Queue <E>  
+
+## 92. What is the advantage of Properties file?
+If you change the value in the properties file, you **don't need** to **recompile** the java class. So, it makes the application easy to manage. It is used to store information which is to be **changed frequently**. 
+
+    FileReader fileReader = new FileReader("db.properties");
+    Properties p = new Properties();
+    p.load(fileReader);
+    System.out.println(p.getProperty("user"));
+    System.out.println(p.getProperty("password"));
+    
+## 93. What is the advantage of the generic collection?
+There are three main advantages of using the generic collection.
+
+- If we use the generic class, we don't need typecasting.
+- It is type-safe and checked at compile time.
+- Generic confirms the stability of the code by making it bug detectable at compile time.
+
+## 94. What is hash-collision in Hashtable and how it is handled in Java?
+Two different keys with the same hash value are known as hash-collision. Two separate entries will be kept in a single hash bucket to avoid the collision. There are two ways to avoid hash-collision.
+
+Separate Chaining
+[Open Addressing](https://www.geeksforgeeks.org/hashing-set-3-open-addressing/)
+
+## 95. What do you understand by fail-fast?
+The Iterator in java which immediately throws ConcurrentModificationException, if any structural modification occurs in, is called as a Fail-fast iterator. Fail-fast iterator does not require any extra space in memory.
+
+## 96. How to convert ArrayList to Array and Array to ArrayList?
+We can convert an Array to ArrayList by using the asList() method of Arrays class. asList() method is the static method of Arrays class and accepts the List object. Consider the following syntax:
+    Arrays.asList(item)  
+
+We can convert an ArrayList to Array using toArray() method of the ArrayList class. Consider the following syntax to convert the ArrayList to the List object.
+    List_object.toArray(new String[List_object.size()])
+
+## 97. What is JNDI
+[JNDI](https://blog.csdn.net/zhaosg198312/article/details/3979435)
+
+## 98. 
+

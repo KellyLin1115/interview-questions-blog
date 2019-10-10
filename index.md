@@ -11,9 +11,10 @@
 
 :herb: 6. [Garbage Collection Interview Questions](src/main/resources/static/pages/java/gc.md)
 
+:herb: 7. [Hibernate Interview Questions](src/main/resources/static/pages/hibernate/hibernate.md)
+
 JDBC Interview Questions
 Spring Interview Questions
-Hibernate Interview Questions
 JSP Interview Questions
 Performance Tuning
 
