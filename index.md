@@ -13,8 +13,10 @@
 
 :herb: 7. [Hibernate Interview Questions](src/main/resources/static/pages/hibernate/hibernate.md)
 
+:herb: 7. [Spring Interview Questions](src/main/resources/static/pages/spring/spring.md)
+
+
 JDBC Interview Questions
-Spring Interview Questions
 JSP Interview Questions
 Performance Tuning
 
