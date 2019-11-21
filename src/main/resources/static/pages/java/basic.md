@@ -799,5 +799,11 @@ We can convert an ArrayList to Array using toArray() method of the ArrayList cla
 ## 97. What is JNDI
 [JNDI](https://blog.csdn.net/zhaosg198312/article/details/3979435)
 
-## 98. 
+## 98. How to create a immutable object in Java?
+To make a class immutable, below steps needs to be followed:
+- Don’t provide “setter” methods or methods that modify fields or objects referred to by fields. Setter methods are meant to change the state of object and this is what we want to prevent here.
+- Make all fields final and private. Fields declared private will not be accessible outside the class and making them final will ensure the even accidentally you can not change them.
+- Don’t allow subclasses to override methods. The simplest way to do this is to declare the class as final. Final classes in java can not be overridden.
+- Always remember that your instance variables will be either mutable or immutable. Identify them and return new objects with copied content for all mutable objects (object references). Immutable variables (primitive types) can be returned safely without extra effort.
+
 
