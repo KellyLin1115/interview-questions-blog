@@ -15,10 +15,9 @@
 
 :herb: 7. [Spring Interview Questions](src/main/resources/static/pages/spring/spring.md)
 
+:herb: 8. [Gangs of Four (GoF) Design Patterns](https://www.journaldev.com/31902/gangs-of-four-gof-design-patterns)
 
-JDBC Interview Questions
-JSP Interview Questions
-Performance Tuning
+
 
 
 

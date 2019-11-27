@@ -807,3 +807,5 @@ To make a class immutable, below steps needs to be followed:
 - Always remember that your instance variables will be either mutable or immutable. Identify them and return new objects with copied content for all mutable objects (object references). Immutable variables (primitive types) can be returned safely without extra effort.
 
 
+## links:
+[material 1](https://howtodoinjava.com/java-interview-questions/)
