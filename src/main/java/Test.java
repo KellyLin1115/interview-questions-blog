@@ -1,17 +1,17 @@
 import java.util.Date;
 
 public class Test {
+    public static boolean f1(){
+        System.out.println("invoke f1");
+        return true;
+    }
+
+    public static boolean f2(){
+        System.out.println("invoke f2");
+        return false;
+    }
     public static void main(String[] args) {
-        Date date = new Date();
-        System.out.println("util: " + date);
-
-        java.sql.Date dateSQL = new java.sql.Date(2001);
-
-        System.out.println("sql: " + dateSQL);
-
-        System.out.println(java.sql.Date.valueOf("2001-01-02"));
-
-
-
+        System.out.println(f1() && f2());
+        System.out.println(7&3);
     }
 }

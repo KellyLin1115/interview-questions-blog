@@ -24,5 +24,9 @@ By Runtime.getRuntime().exec(?) method. Consider the following example.
      public static void main(String args[])throws Exception{  
       Runtime.getRuntime().exec("notepad");//will open a new notepad  
      }  
-    }  
+    } 
     
+     
+# Garbage Collection Materials
+## [Java Garbage Collection](https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html)
+
