@@ -8,8 +8,7 @@
 ## 2. What are main concepts of OOP in Java
 There are **four** main OOP concepts in Java:
 
-1. Polymorphism: It refers to the ability of OOPs programming languages to differentiate between entities with the same name efficiently. This is done by Java with the help of the signature and declaration of these entities.
-
+1. **Polymorphism**: It is the ability by which, we can create functions or reference variables which behaves differently in different programmatic context.
     Polymorphism in Java are mainly of 2 types:
     * Overloading in Java
     * Overriding in Java
