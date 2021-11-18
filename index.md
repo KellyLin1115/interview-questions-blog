@@ -17,6 +17,7 @@
 
 :herb: 8. [Gangs of Four (GoF) Design Patterns](https://www.journaldev.com/31902/gangs-of-four-gof-design-patterns)
 
+:herb: 9. [UML Class Digrams](http://www.cs.utsa.edu/~cs3443/uml/uml.html)
 
 
 
